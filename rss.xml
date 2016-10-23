@@ -11,7 +11,7 @@
         <item>
     <title>Haskell eXchange 2016</title>
     <link>http://drets.github.io/posts/haskell-exchange-2016.html</link>
-    <description><![CDATA[<p>A few weeks ago I visited “Haskell eXchange 2016” conference in London. In this post I’d like to introduce reader to functional programming, briefly highlight the advantages and techniques of functional programming which I learnt from first talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>. Then, I want to share my opinion on how companies may start to integrate functional programming to their tech stack.</p>
+    <description><![CDATA[<p>A few weeks ago I visited “Haskell eXchange” conference in London. In this post I’d like to introduce a reader to functional programming, briefly highlight the advantages and techniques of functional programming which I learned from first talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>. Then I want to share my opinion on how companies may start to integrate functional programming to their tech stack.</p>
 <div>
 
 </div>
@@ -20,12 +20,12 @@
 <p><em>What is functional programming?</em><br />
 A style of building programs using mathematical functions.</p>
 <p><em>What is mathematical function?</em><br />
-A relation between a set of inputs and a set of outputs with the property that each input is related to exactly one output.</p>
+A relation between a set of inputs and a set of outputs with the property that each input is related to <em>exactly one</em> output.</p>
 <p>Let me give an example:</p>
 <div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> x <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>
 
 <span class="kw">function</span> <span class="at">impure</span>(y) <span class="op">{</span>
-  x <span class="op">=</span> x <span class="op">+</span> y
+  x <span class="op">=</span> x <span class="op">+</span> y<span class="op">;</span>
   <span class="cf">return</span> x<span class="op">;</span>
 <span class="op">}</span>
   
@@ -49,7 +49,7 @@ Because you lose modularity and it is harder to think about functions with side-
 <span class="op">}</span>
 
 <span class="kw">function</span> <span class="at">plusOne</span>(x) <span class="op">{</span>
-  <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span>
+  <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span><span class="op">;</span>
 <span class="op">}</span>
 
 <span class="kw">var</span> plusTwo <span class="op">=</span> <span class="at">compose</span>(plusOne<span class="op">,</span> plusOne)<span class="op">;</span>
@@ -60,40 +60,46 @@ Because you lose modularity and it is harder to think about functions with side-
 <span class="va">console</span>.<span class="at">log</span>(<span class="at">plusThree</span>(<span class="dv">1</span>))<span class="op">;</span> <span class="co">// 4</span></code></pre></div>
 <p>It’s like <em>lego</em> games − having a set of pure functions you can easily build your own galaxy.</p>
 <p><em>Why don’t use pure functions all the time?</em><br />
-Pure functions are awesome but the real life programs have a bunch of side-effects. Let me give an example: getting response from the server, reading from file, printing to a screen − all these operations have side-effects. You can’t build <em>useful</em> program just on top of pure functions − you need functions with side-effects as well.</p>
-<h2 id="don-stewarts-talk-assumes-a-basic-haskell-knowledge">Don Stewart’s talk (assumes a basic Haskell knowledge)</h2>
+Pure functions are awesome but the real life programs have a bunch of side-effects. Getting response from the server, reading from the file, printing to the screen − all these operations have side-effects. You can’t build <em>useful</em> program just on top of pure functions − you need functions with side-effects as well.</p>
+<h2 id="don-stewarts-talk">Don Stewart’s talk</h2>
 <p>Haskell has a smart way to distinguish between pure and impure functions. It is common in Haskell community to write function types for the functions.</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">makeApple ::</span> <span class="dt">Seed</span> <span class="ot">→</span> <span class="dt">IO</span> <span class="dt">Apple</span>
 
 <span class="ot">makeJuice ::</span> <span class="dt">Apple</span> <span class="ot">→</span> <span class="dt">Juice</span></code></pre></div>
-<p>If you see <code>IO</code> somewhere in type signature, it means function is impure.<br />
-Haskell has strong static typing. Each Haskell program should be correctly type checked by compiler before ability to run a program (compiler may catch a dozens of errors!).<br />
-It seems we are set to start highlighting some parts from the Don’s talk. Don Stewart leads the Haskell teams in a financial sector and he shared how to control complexity of application with more than 2 millions lines of code. And answer is simple!</p>
-<p>• Types helps to control complexity.</p>
+<p>If you see <code>IO</code> (it’s a Monad) somewhere in type signature, it means function is impure.<br />
+Haskell has strong static typing. Before running a program, compiler should correctly type check a program (compiler may catch a dozens of errors!).<br />
+It seems we are set to start highlighting some parts from the Don Stewart’s talk. Don Stewart leads the Haskell teams in a financial sector and he shared how to control complexity of applications with more than <strong>3</strong> million lines of code and here few tips from him:</p>
+<p>• Types help to control complexity.</p>
 <p>• Compare 2 pricing functions:</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">f ::</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Double</span>
 
 <span class="ot">g ::</span> <span class="dt">Rate</span> <span class="dt">Libor</span> <span class="ot">-&gt;</span> <span class="dt">Spot</span> <span class="dt">SGD</span> <span class="ot">-&gt;</span> <span class="dt">Date</span> <span class="ot">-&gt;</span> <span class="dt">Rate</span> <span class="dt">SIBOR</span></code></pre></div>
 <p><code>g</code> has more expressive types (in other words you can say more about the function by looking in function type (assuming you know financial domain)).</p>
 <p>• Remove unclear types.</p>
-<p>• No side effects. Try to write a pure function as many as possible.</p>
+<p>• No side effects (try to write pure functions as many as possible).</p>
 <p>• Make things simpler by controlling <code>IO</code> and new types.</p>
 <p>• Types are for keeping code maintainable and self-documented.</p>
 <p>• Use “new types” and “data” to distinguish unique entities in the system.</p>
 <p>• Using <a href="https://wiki.haskell.org/Phantom_type">Phantom types</a> you can tag the things. Make it impossible to mix up or combine values in nonsense ways.</p>
-<p>• As a dual to how <code>Stings</code> and <code>Double</code> types have too many valid values for most use cases. <code>Bool</code> often has to little information. Instead of<br />
-<code>authenticate :: String -&gt; String -&gt; Bool</code><br />
-write<br />
-<code>authenticate :: Privilege p =&gt; User -&gt; Password -&gt; IO (AuthUser p)</code></p>
-<p>• Lift errors into types (using <code>Maybe</code> ane <code>Either</code>) for making functions modular.</p>
+<p>• As a dual to how <code>Stings</code> and <code>Double</code> types have too many valid values for most use cases. <code>Bool</code> often has to little information.<br />
+Instead of <code>authenticate :: String -&gt; String -&gt; Bool</code><br />
+write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (AuthUser p)</code></p>
+<p>• Lift errors into types (using <code>Maybe</code> ane <code>Either</code>) for  making functions modular.</p>
 <p>• Move <a href="https://wiki.haskell.org/Partial_functions">partial functions</a> to the edges − write total functions as a core of program.</p>
 <p>• Types − for minimize complexity; it helps to deliver faster; reuse is extremely cheap.</p>
+<p>Of course for the reader unfamiliar with Haskell these tips don’t tell much, but let me repeat once more. Basically, the main idea − you need to use concrete types as much as possible. In such a way you give a compiler more information about a program and compiler helps to catch a lot of errors and hopefully optimize the code. Other simple ideas are to use total functions, move side-effects to the edges of a program. That’s it!</p>
 <h2 id="haskell-to-industry">Haskell to industry</h2>
-<p>WIP</p>
+<p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to Python or Javascript, or Php communities. It tends to lack of some useful libraries, so if you switch to Haskell you should expect to contribute a lot to existed libraries or write more libraries for your needs. However, I believe it should be changed really soon since a lot of people realized that OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell if you was building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based − looks like a good alternative to almighty Javascipt. One more advantage of Elm is that: you can introduce it gradually into an existing JS project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Once you will be happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start. Happy hacking!</p>
+<p>At the end of this post I’d like to share a photo with one of the core Haskell developers,<br />
+<a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
+<figure>
+<img src="../images/posts/haskell-exchange-2016/simon_and_me.png" />
+</figure>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>To see <em><a href="https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems">“Haskell in the Large - The day to day practice of using Haskell to write large systems”</a></em> talk you must a sign up on “skills matter” site.<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>To see full <em><a href="https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems">“Haskell in the Large - The day to day practice of using Haskell to write large systems”</a></em> talk you must sign up to “skills matter” site (it’s free!).<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="http://elm-lang.org/blog/how-to-use-elm-at-work">How to use Elm at work</a><a href="#fnref2">↩</a></p></li>
 </ol>
 </section>
 
