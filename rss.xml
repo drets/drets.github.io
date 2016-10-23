@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>This is a job for Lambda Calculus</title>
+        <link>http://drets.github.io</link>
+        <description><![CDATA[Haskell]]></description>
+        <atom:link href="http://drets.github.io/rss.xml" rel="self"
+                   type="application/rss+xml" />
+        <lastBuildDate>Sat, 22 Oct 2016 03:00:00 UT</lastBuildDate>
+        <item>
+    <title>Haskell eXchange 2016</title>
+    <link>http://drets.github.io/posts/haskell-exchange-2016.html</link>
+    <description><![CDATA[<p>A few weeks ago I visited “Haskell eXchange 2016” conference in London. In this post I’d like to introduce reader to functional programming, briefly highlight the advantages and techniques of functional programming which I learnt from first talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>. Then, I want to share my opinion on how companies may start to integrate functional programming to their tech stack.</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="introduction-to-functional-programming">Introduction to functional programming</h2>
+<p><em>What is functional programming?</em><br />
+A style of building programs using mathematical functions.</p>
+<p><em>What is mathematical function?</em><br />
+A relation between a set of inputs and a set of outputs with the property that each input is related to exactly one output.</p>
+<p>Let me give an example:</p>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> x <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>
+
+<span class="kw">function</span> <span class="at">impure</span>(y) <span class="op">{</span>
+  x <span class="op">=</span> x <span class="op">+</span> y
+  <span class="cf">return</span> x<span class="op">;</span>
+<span class="op">}</span>
+  
+<span class="kw">function</span> <span class="at">pure</span>(x) <span class="op">{</span>
+  <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span><span class="op">;</span>
+<span class="op">}</span>
+
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">impure</span>(<span class="dv">3</span>))<span class="op">;</span> <span class="co">// 4</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">impure</span>(<span class="dv">3</span>))<span class="op">;</span> <span class="co">// 7</span>
+
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">pure</span>(<span class="dv">3</span>))<span class="op">;</span> <span class="co">// 4</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">pure</span>(<span class="dv">3</span>))<span class="op">;</span> <span class="co">// 4</span></code></pre></div>
+<p>Impure function returns different result for the same input (number <code>3</code>). In other words − impure function has side-effects.</p>
+<p><em>Why is bad?</em><br />
+Because you lose modularity and it is harder to think about functions with side-effects.</p>
+<p>On the other hand it’s really easy to compose pure functions:</p>
+<div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">function</span> <span class="at">compose</span>(f<span class="op">,</span>g) <span class="op">{</span>
+   <span class="cf">return</span> <span class="kw">function</span>(x) <span class="op">{</span>
+     <span class="cf">return</span> <span class="at">f</span>(<span class="at">g</span>(x))<span class="op">;</span>
+   <span class="op">}</span>
+<span class="op">}</span>
+
+<span class="kw">function</span> <span class="at">plusOne</span>(x) <span class="op">{</span>
+  <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span>
+<span class="op">}</span>
+
+<span class="kw">var</span> plusTwo <span class="op">=</span> <span class="at">compose</span>(plusOne<span class="op">,</span> plusOne)<span class="op">;</span>
+<span class="kw">var</span> plusThree <span class="op">=</span> <span class="at">compose</span>(plusTwo<span class="op">,</span> plusOne)<span class="op">;</span>
+
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">plusOne</span>(<span class="dv">1</span>))<span class="op">;</span> <span class="co">// 2</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">plusTwo</span>(<span class="dv">1</span>))<span class="op">;</span> <span class="co">// 3</span>
+<span class="va">console</span>.<span class="at">log</span>(<span class="at">plusThree</span>(<span class="dv">1</span>))<span class="op">;</span> <span class="co">// 4</span></code></pre></div>
+<p>It’s like <em>lego</em> games − having a set of pure functions you can easily build your own galaxy.</p>
+<p><em>Why don’t use pure functions all the time?</em><br />
+Pure functions are awesome but the real life programs have a bunch of side-effects. Let me give an example: getting response from the server, reading from file, printing to a screen − all these operations have side-effects. You can’t build <em>useful</em> program just on top of pure functions − you need functions with side-effects as well.</p>
+<h2 id="don-stewarts-talk-assumes-a-basic-haskell-knowledge">Don Stewart’s talk (assumes a basic Haskell knowledge)</h2>
+<p>Haskell has a smart way to distinguish between pure and impure functions. It is common in Haskell community to write function types for the functions.</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">makeApple ::</span> <span class="dt">Seed</span> <span class="ot">→</span> <span class="dt">IO</span> <span class="dt">Apple</span>
+
+<span class="ot">makeJuice ::</span> <span class="dt">Apple</span> <span class="ot">→</span> <span class="dt">Juice</span></code></pre></div>
+<p>If you see <code>IO</code> somewhere in type signature, it means function is impure.<br />
+Haskell has strong static typing. Each Haskell program should be correctly type checked by compiler before ability to run a program (compiler may catch a dozens of errors!).<br />
+It seems we are set to start highlighting some parts from the Don’s talk. Don Stewart leads the Haskell teams in a financial sector and he shared how to control complexity of application with more than 2 millions lines of code. And answer is simple!</p>
+<p>• Types helps to control complexity.</p>
+<p>• Compare 2 pricing functions:</p>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">f ::</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Double</span>
+
+<span class="ot">g ::</span> <span class="dt">Rate</span> <span class="dt">Libor</span> <span class="ot">-&gt;</span> <span class="dt">Spot</span> <span class="dt">SGD</span> <span class="ot">-&gt;</span> <span class="dt">Date</span> <span class="ot">-&gt;</span> <span class="dt">Rate</span> <span class="dt">SIBOR</span></code></pre></div>
+<p><code>g</code> has more expressive types (in other words you can say more about the function by looking in function type (assuming you know financial domain)).</p>
+<p>• Remove unclear types.</p>
+<p>• No side effects. Try to write a pure function as many as possible.</p>
+<p>• Make things simpler by controlling <code>IO</code> and new types.</p>
+<p>• Types are for keeping code maintainable and self-documented.</p>
+<p>• Use “new types” and “data” to distinguish unique entities in the system.</p>
+<p>• Using <a href="https://wiki.haskell.org/Phantom_type">Phantom types</a> you can tag the things. Make it impossible to mix up or combine values in nonsense ways.</p>
+<p>• As a dual to how <code>Stings</code> and <code>Double</code> types have too many valid values for most use cases. <code>Bool</code> often has to little information. Instead of<br />
+<code>authenticate :: String -&gt; String -&gt; Bool</code><br />
+write<br />
+<code>authenticate :: Privilege p =&gt; User -&gt; Password -&gt; IO (AuthUser p)</code></p>
+<p>• Lift errors into types (using <code>Maybe</code> ane <code>Either</code>) for making functions modular.</p>
+<p>• Move <a href="https://wiki.haskell.org/Partial_functions">partial functions</a> to the edges − write total functions as a core of program.</p>
+<p>• Types − for minimize complexity; it helps to deliver faster; reuse is extremely cheap.</p>
+<h2 id="haskell-to-industry">Haskell to industry</h2>
+<p>WIP</p>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>To see <em><a href="https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems">“Haskell in the Large - The day to day practice of using Haskell to write large systems”</a></em> talk you must a sign up on “skills matter” site.<a href="#fnref1">↩</a></p></li>
+</ol>
+</section>
+
+<div id="comment-nav" class="pure-g-r">
+  <div class="pure-u-1-5">
+    
+    
+  </div>
+  <div class="pure-u-1-5">
+    <a id="gh-comments-button" class="pure-button" href="https://github.com/drets/drets.github.io/issues/1.0">Comment on GitHub</a>
+
+    
+      
+        (see <a href="posts/haskell-exchange-2016.html#comment-nav">the full post</a> for a reddit link)
+      
+    
+  </div>
+  <div class="pure-u-3-5">
+  </div>
+</div>
+
+<div><div class="license">
+  <p>
+    <span class="inline-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </span>
+    <span class="inline-centered">
+      Post licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </span>
+  </p>
+</div>
+
+</div>
+]]></description>
+    <pubDate>Sat, 22 Oct 2016 03:00:00 UT</pubDate>
+    <guid>http://drets.github.io/posts/haskell-exchange-2016.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+
+    </channel>
+</rss>
