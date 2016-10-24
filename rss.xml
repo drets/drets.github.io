@@ -11,7 +11,7 @@
         <item>
     <title>Haskell eXchange 2016</title>
     <link>http://drets.github.io/posts/haskell-exchange-2016.html</link>
-    <description><![CDATA[<p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>, the author of <a href="http://book.realworldhaskell.org/">“Real World Haskell”</a> book. Then I’ll share some thoughts about how companies might start to integrate functional programming to their tech stack.</p>
+    <description><![CDATA[<p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>, the author of the book <a href="http://book.realworldhaskell.org/">“Real World Haskell”</a>. Then I’ll share some thoughts about how companies might start to integrate functional programming into their tech stack.</p>
 <div>
 
 </div>
@@ -20,7 +20,7 @@
 <p><em>What is functional programming?</em><br />
 A style of building programs using mathematical functions.</p>
 <p><em>What is mathematical function?</em><br />
-A relation between a set of inputs and a set of outputs with the property that each input is related to <em>exactly one</em> output.</p>
+A relation exists between a set of inputs and a set of outputs; each with the property that each input is related to <em>exactly one</em> output.</p>
 <p>Let me give an example:</p>
 <div class="sourceCode"><pre class="sourceCode js"><code class="sourceCode javascript"><span class="kw">var</span> x <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>
 
@@ -62,13 +62,13 @@ Because you lose modularity and it is harder to think about functions with side-
 <p><em>Why aren’t pure functions used all the time?</em><br />
 Pure functions are awesome but the real life programs have a bunch of side-effects. Getting a response from the server, reading from the file, printing to the screen − all these operations have side-effects. You can’t build a truly <em>useful</em> program just on top of pure functions − you need functions with side-effects as well.</p>
 <h2 id="don-stewarts-talk">Don Stewart’s talk</h2>
-<p>Haskell has a smart way to distinguish between pure and impure functions. It is common in Haskell community to write function types for the functions.</p>
+<p>Haskell has a smart way to distinguish between pure and impure functions. It is common in the Haskell community to write function types for the functions.</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">makeApple ::</span> <span class="dt">Seed</span> <span class="ot">→</span> <span class="dt">IO</span> <span class="dt">Apple</span>
 
 <span class="ot">makeJuice ::</span> <span class="dt">Apple</span> <span class="ot">→</span> <span class="dt">Juice</span></code></pre></div>
 <p>If you see <code>IO</code> (it’s a Monad) somewhere in type signature, it means the function is impure.<br />
 As well, Haskell has strong static typing. Before running a program, compiler should correctly type check a program (and compiler can catch a dozens of errors!).<br />
-It seems we are set to start highlighting some parts from the Don Stewart’s talk. Don Stewart leads the Haskell teams in the financial sector and he shared how to control complexity of applications with more than <strong>3</strong> million lines of code.</p>
+Now, let me highlight some parts from Don Stewart’s talk. Don Stewart leads the Haskell teams in the financial sector. In his talk, he shared how to control complexity of applications with more than <strong>3</strong> million lines of code.</p>
 <p>Here are a few tips from him:</p>
 <p>• Types help to control complexity.</p>
 <p>• Compare 2 pricing functions:</p>
@@ -85,12 +85,13 @@ It seems we are set to start highlighting some parts from the Don Stewart’s ta
 <p>• As opposed to <code>Stings</code> and <code>Double</code> types have too many valid values for most use cases, <code>Bool</code> often has too little information.<br />
 Instead of <code>authenticate :: String -&gt; String -&gt; Bool</code><br />
 write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (AuthUser p)</code></p>
-<p>• Lift errors into types (using <code>Maybe</code> ane <code>Either</code>) for  making functions modular.</p>
+<p>• Lift errors into types (using <code>Maybe</code> and <code>Either</code>) for  making functions modular.</p>
 <p>• Move <a href="https://wiki.haskell.org/Partial_functions">partial functions</a> to the edges and write total functions as a core of program.</p>
 <p>• Types − in order to minimize complexity; it helps to deliver faster. Reuse is extremely cheap.</p>
-<p>Of course, for the reader unfamiliar with Haskell these tips don’t tell much, but let me repeat once more. Basically, the main idea − you need to use meaningful types as much as possible. In such a way you give a compiler more information about a program and consequently, the compiler helps to catch a lot of errors and hopefully optimize the code. Other simple ideas are to use total functions, move side-effects to the edges of a program. That’s it!</p>
+<p>Of course, for the reader unfamiliar with Haskell, these tips don’t tell much, but let me repeat once more. Basically, the main idea is that you need to use meaningful types as much as possible. In such a way you give a compiler more information about a program and consequently, the compiler helps to catch a lot of errors and hopefully optimize the code. Other simple ideas are to use total functions, move side-effects to the edges of a program. That’s it!</p>
 <h2 id="haskell-to-industry">Haskell to industry</h2>
-<p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to the Python or Javascript, or Php communities. It tends to lack of some useful libraries, so if you switch to Haskell you should expect to contribute a lot to existing libraries or write more libraries for your needs. However, I believe it should be changed soon since a lot of people have realized that the OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell, if you were building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest a “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based, and so it looks like a good alternative to almighty Javascipt. One more advantage of Elm is that you can introduce it gradually into an existing JS project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Once you are happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start. Happy hacking!</p>
+<p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to the Python or Javascript, or Php communities. It tends to lack some useful libraries, so if you switch to Haskell you should expect to have to contribute a lot to existing libraries or write more libraries for your needs. However, I believe it should be changed soon since a lot of people have realized that the OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell, if you were building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest a “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based, and so it looks like a good alternative to almighty Javascipt. One more advantage of Elm is that you can introduce it gradually into an existing JS project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Once you are happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start.</p>
+<p>Happy hacking!</p>
 <p>At the end of this post I’d like to share a photo with one of the core Haskell developers,<br />
 <a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
 <figure>
@@ -99,7 +100,7 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>To see full <em><a href="https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems">“Haskell in the Large - The day to day practice of using Haskell to write large systems”</a></em> talk you must sign up to “skills matter” site (it’s free!).<a href="#fnref1">↩</a></p></li>
+<li id="fn1"><p>To see full talk: <em><a href="https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems">“Haskell in the Large - The day to day practice of using Haskell to write large systems”</a></em>, you can sign up to “skills matter” site (it’s free!).<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p><a href="http://elm-lang.org/blog/how-to-use-elm-at-work">How to use Elm at work</a><a href="#fnref2">↩</a></p></li>
 </ol>
 </section>
