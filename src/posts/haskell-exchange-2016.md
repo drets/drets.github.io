@@ -6,11 +6,12 @@ reddit: false
 gh-issue: 1
 ---
 
-A few weeks ago I visited “Haskell eXchange” conference in London. In this
-post I'd like to introduce a reader to functional programming, briefly highlight the
-advantages and techniques of functional programming which I learned from first
-talk[^t] by [Don Stewart](https://donsbot.wordpress.com/about). Then I want to
-share my opinion on how companies may start to integrate functional programming
+A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this
+post, I'd like to introduce readers to functional programming and briefly highlight the
+advantages and techniques of functional programming which I learned from a
+talk[^t] by [Don Stewart](https://donsbot.wordpress.com/about), the author of
+[“Real World Haskell"](http://book.realworldhaskell.org/) book. Then I'll
+share some thoughts about how companies might start to integrate functional programming
 to their tech stack.
 
 [^t]: To see full
@@ -50,14 +51,14 @@ console.log(pure(3)); // 4
 console.log(pure(3)); // 4
 ```
 
-Impure function returns different result for the same
-input (number `3`). In other words − impure function has side-effects.
+Impure functions return different result for the same
+input (number `3`). In other words − impure functions have side-effects.
 
-*Why is bad?*  
+*Why is this bad?*  
 Because you lose modularity and it is harder to think about functions with
 side-effects.  
 
-On the other hand it's really easy to compose pure functions:
+On the other hand, it's really easy to compose pure functions:
 
 ```js
 function compose(f,g) {
@@ -78,13 +79,13 @@ console.log(plusTwo(1)); // 3
 console.log(plusThree(1)); // 4
 ```
 
-It's like *lego* games − having a set of pure functions you can easily build your
+It's like *lego* games; by having a set of pure functions you can easily build your
 own galaxy.
 
-*Why don't use pure functions all the time?*  
+*Why aren't pure functions used all the time?*  
 Pure functions are awesome but the real life programs have a bunch of
-side-effects. Getting response from the server, reading from the file, printing
-to the screen − all these operations have side-effects. You can't build
+side-effects. Getting a response from the server, reading from the file, printing
+to the screen − all these operations have side-effects. You can't build a truly
 *useful* program just on top of pure functions − you need functions with
 side-effects as well.
 
@@ -100,13 +101,15 @@ makeApple :: Seed → IO Apple
 makeJuice :: Apple → Juice
 ```
 
-If you see `IO` (it's a Monad) somewhere in type signature, it means function is impure.  
-Haskell has strong static typing. Before running a program, compiler should correctly type
-check a program (compiler may catch a dozens of errors!).  
+If you see `IO` (it's a Monad) somewhere in type signature, it means the function is impure.  
+As well, Haskell has strong static typing. Before running a program, compiler should correctly type
+check a program (and compiler can catch a dozens of errors!).  
 It seems we are set to start highlighting some parts from the Don Stewart's talk. Don
-Stewart leads  the Haskell teams in a financial sector and he shared how
+Stewart leads the Haskell teams in the financial sector and he shared how
 to control complexity of applications with more than **3** million lines of
-code and here few tips from him:  
+code. 
+
+Here are a few tips from him:  
 
 • Types help to control complexity.  
 
@@ -118,12 +121,12 @@ f :: Double -> Double -> String -> Double
 g :: Rate Libor -> Spot SGD -> Date -> Rate SIBOR
 ```
 
-`g` has more expressive types (in other words you can say more about the function
-by looking in function type (assuming you know financial domain)).  
+`g` has more expressive types. In other words, you can say more about the function
+by looking in function type assuming you know financial domain.  
 
 • Remove unclear types.  
 
-• No side effects (try to write pure functions as many as possible).  
+• No side effects. Instead, try to write pure functions as many as possible.  
 
 • Make things simpler by controlling `IO` and new types.  
 
@@ -131,45 +134,45 @@ by looking in function type (assuming you know financial domain)).
 
 • Use “new types” and “data” to distinguish unique entities in the system.  
 
-• Using [Phantom types](https://wiki.haskell.org/Phantom_type) you can tag the
+• Using [Phantom types](https://wiki.haskell.org/Phantom_type), you can tag the
 things. Make it impossible to mix up or combine values in nonsense ways.  
 
-• As a dual to how `Stings` and `Double` types have too many valid values for most
-use cases. `Bool` often has to little information.  
+• As opposed to `Stings` and `Double` types have too many valid values for most
+use cases, `Bool` often has too little information.  
 Instead of `authenticate :: String -> String -> Bool`  
 write `authenticate :: Privileges p => User -> Password -> IO (AuthUser p)`  
 
 • Lift errors into types (using `Maybe` ane `Either`) for  making functions modular.  
 
 • Move [partial functions](https://wiki.haskell.org/Partial_functions) to the
-edges − write total functions as a core of program.  
+edges and write total functions as a core of program.  
 
-• Types − for minimize complexity; it helps to deliver faster; reuse is extremely cheap.  
+• Types − in order to minimize complexity; it helps to deliver faster. Reuse is extremely cheap.  
 
-Of course for the reader unfamiliar with Haskell these tips don't tell much,
+Of course, for the reader unfamiliar with Haskell these tips don't tell much,
 but let me repeat once more. Basically, the main idea − you need to use
-meaningful types  as much as possible. In such a way you give a compiler more
-information about a  program and compiler helps to catch a lot of errors and hopefully optimize
-the code. Other simple ideas are to use total functions, move side-effects
-to the edges of a program. That's it!
+meaningful types as much as possible. In such a way you give a compiler more
+information about a program and consequently, the compiler helps to catch a
+lot of errors and hopefully optimize the code. Other simple ideas are to use
+total functions, move side-effects to the edges of a program. That's it!
 
 Haskell to industry
 --------------------------
 Even if Haskell has a great community with a lot of academic folks behind it,
-the community is really small compare to Python or Javascript, or Php
+the community is really small compare to the Python or Javascript, or Php
 communities. It tends to lack of some useful libraries, so if you
-switch to Haskell you should expect to contribute a lot to existed libraries
+switch to Haskell you should expect to contribute a lot to existing libraries
 or write more libraries for your needs. However, I believe it should be
-changed really soon since a lot of people realized that OOP paradigm is not
+changed soon since a lot of people have realized that the OOP paradigm is not
 an answer to robust software development, especially in the time when
 parallel and concurrent programming plays more important role. 
-I understand that re-writing back-end systems on Haskell if you was building
+I understand that re-writing back-end systems on Haskell, if you were building
 the systems during last 10 years using Javasript, Php, Java may not be an
-option. As a first step towards Haskell I suggest “Haskell-like” language
+option. As a first step towards Haskell I suggest a “Haskell-like” language
 − [Elm](http://elm-lang.org). Why Elm? Elm looks a bit simpler to start and
-it's web-browser-based − looks like a good alternative to almighty Javascipt.
-One more advantage of Elm is that: you can introduce it gradually into an
-existing JS project[^elm]. Once you will be happy with your front-end using
+it's web-browser-based, and so it looks like a good alternative to almighty Javascipt.
+One more advantage of Elm is that you can introduce it gradually into an
+existing JS project[^elm]. Once you are happy with your front-end using
 Elm you may think to move some of your back-end services to Haskell. After Elm
 it should be much easier to start. Happy hacking!  
 
@@ -180,4 +183,3 @@ Haskell developers,
 [Simon Peyton Jones](https://en.wikipedia.org/wiki/Simon_Peyton_Jones).
 
 ![](/images/posts/haskell-exchange-2016/simon_and_me.png)
-
