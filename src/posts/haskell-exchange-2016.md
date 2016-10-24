@@ -9,14 +9,14 @@ gh-issue: 1
 A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this
 post, I'd like to introduce readers to functional programming and briefly highlight the
 advantages and techniques of functional programming which I learned from a
-talk[^t] by [Don Stewart](https://donsbot.wordpress.com/about), the author of
-[“Real World Haskell"](http://book.realworldhaskell.org/) book. Then I'll
-share some thoughts about how companies might start to integrate functional programming
-to their tech stack.
+talk[^t] by [Don Stewart](https://donsbot.wordpress.com/about), the author of the book 
+[“Real World Haskell"](http://book.realworldhaskell.org/). Then I'll
+share some thoughts about how companies might start to integrate functional
+programming into their tech stack.
 
-[^t]: To see full
-*[“Haskell in the Large - The day to day practice of using Haskell to write large systems”](https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems)*
-talk you must sign up to “skills matter” site (it's free!).
+[^t]: To see full talk:
+*[“Haskell in the Large - The day to day practice of using Haskell to write large systems”](https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems)*,
+you can sign up to “skills matter” site (it's free!).
 
 <div></div><!--more-->
 
@@ -27,7 +27,7 @@ Introduction to functional programming
 A style of building programs using mathematical functions.  
 
 *What is mathematical function?*  
-A relation between a set of inputs and a set of outputs with the property that
+A relation exists between a set of inputs and a set of outputs; each with the property that
 each input is related to *exactly one* output.
 
 Let me give an example:
@@ -92,7 +92,7 @@ side-effects as well.
 Don Stewart's talk
 --------------------------
 Haskell has a smart way to distinguish between pure and impure
-functions. It is common in Haskell community to write function types for the
+functions. It is common in the Haskell community to write function types for the
 functions.
 
 ```haskell
@@ -104,8 +104,8 @@ makeJuice :: Apple → Juice
 If you see `IO` (it's a Monad) somewhere in type signature, it means the function is impure.  
 As well, Haskell has strong static typing. Before running a program, compiler should correctly type
 check a program (and compiler can catch a dozens of errors!).  
-It seems we are set to start highlighting some parts from the Don Stewart's talk. Don
-Stewart leads the Haskell teams in the financial sector and he shared how
+Now, let me highlight some parts from Don Stewart's talk. Don Stewart leads
+the Haskell teams in  the financial sector. In his talk, he shared how
 to control complexity of applications with more than **3** million lines of
 code. 
 
@@ -142,15 +142,15 @@ use cases, `Bool` often has too little information.
 Instead of `authenticate :: String -> String -> Bool`  
 write `authenticate :: Privileges p => User -> Password -> IO (AuthUser p)`  
 
-• Lift errors into types (using `Maybe` ane `Either`) for  making functions modular.  
+• Lift errors into types (using `Maybe` and `Either`) for  making functions modular.  
 
 • Move [partial functions](https://wiki.haskell.org/Partial_functions) to the
 edges and write total functions as a core of program.  
 
 • Types − in order to minimize complexity; it helps to deliver faster. Reuse is extremely cheap.  
 
-Of course, for the reader unfamiliar with Haskell these tips don't tell much,
-but let me repeat once more. Basically, the main idea − you need to use
+Of course, for the reader unfamiliar with Haskell, these tips don't tell much,
+but let me repeat once more. Basically, the main idea is that you need to use
 meaningful types as much as possible. In such a way you give a compiler more
 information about a program and consequently, the compiler helps to catch a
 lot of errors and hopefully optimize the code. Other simple ideas are to use
@@ -160,8 +160,8 @@ Haskell to industry
 --------------------------
 Even if Haskell has a great community with a lot of academic folks behind it,
 the community is really small compare to the Python or Javascript, or Php
-communities. It tends to lack of some useful libraries, so if you
-switch to Haskell you should expect to contribute a lot to existing libraries
+communities. It tends to lack some useful libraries, so if you
+switch to Haskell you should expect to have to contribute a lot to existing libraries
 or write more libraries for your needs. However, I believe it should be
 changed soon since a lot of people have realized that the OOP paradigm is not
 an answer to robust software development, especially in the time when
@@ -174,9 +174,11 @@ it's web-browser-based, and so it looks like a good alternative to almighty Java
 One more advantage of Elm is that you can introduce it gradually into an
 existing JS project[^elm]. Once you are happy with your front-end using
 Elm you may think to move some of your back-end services to Haskell. After Elm
-it should be much easier to start. Happy hacking!  
+it should be much easier to start.  
 
 [^elm]: [How to use Elm at work](http://elm-lang.org/blog/how-to-use-elm-at-work)
+
+Happy hacking!  
 
 At the end of this post I'd like to share a photo with one of the core
 Haskell developers,  
