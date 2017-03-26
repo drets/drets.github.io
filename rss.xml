@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
-        <title>This is a job for Lambda Calculus</title>
-        <link>http://drets.github.io</link>
-        <description><![CDATA[Haskell]]></description>
-        <atom:link href="http://drets.github.io/rss.xml" rel="self"
+        <title>drets</title>
+        <link>https://drets.life</link>
+        <description><![CDATA[For λ calculus]]></description>
+        <atom:link href="https://drets.life/rss.xml" rel="self"
                    type="application/rss+xml" />
         <lastBuildDate>Sat, 22 Oct 2016 03:00:00 UT</lastBuildDate>
         <item>
     <title>Haskell eXchange 2016</title>
-    <link>http://drets.github.io/posts/haskell-exchange-2016.html</link>
+    <link>https://drets.life/posts/haskell-exchange-2016.html</link>
     <description><![CDATA[<p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>, the author of the book <a href="http://book.realworldhaskell.org/">“Real World Haskell”</a>. Then I’ll share some thoughts about how companies might start to integrate functional programming into their tech stack.</p>
 <div>
 
@@ -130,7 +130,7 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 </div>
 ]]></description>
     <pubDate>Sat, 22 Oct 2016 03:00:00 UT</pubDate>
-    <guid>http://drets.github.io/posts/haskell-exchange-2016.html</guid>
+    <guid>https://drets.life/posts/haskell-exchange-2016.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 
