@@ -64,7 +64,6 @@ Pure functions are awesome but the real life programs have a bunch of side-effec
 <h2 id="don-stewarts-talk">Don Stewart’s talk</h2>
 <p>Haskell has a smart way to distinguish between pure and impure functions. It is common in the Haskell community to write function types for the functions.</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">makeApple ::</span> <span class="dt">Seed</span> <span class="ot">→</span> <span class="dt">IO</span> <span class="dt">Apple</span>
-
 <span class="ot">makeJuice ::</span> <span class="dt">Apple</span> <span class="ot">→</span> <span class="dt">Juice</span></code></pre></div>
 <p>If you see <code>IO</code> (it’s a Monad) somewhere in type signature, it means the function is impure.<br />
 As well, Haskell has strong static typing. Before running a program, compiler should correctly type check a program (and compiler can catch a dozens of errors!).<br />
@@ -72,9 +71,8 @@ Now, let me highlight some parts from Don Stewart’s talk. Don Stewart leads th
 <p>Here are a few tips from him:</p>
 <p>• Types help to control complexity.</p>
 <p>• Compare 2 pricing functions:</p>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">f ::</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Double</span>
-
-<span class="ot">g ::</span> <span class="dt">Rate</span> <span class="dt">Libor</span> <span class="ot">-&gt;</span> <span class="dt">Spot</span> <span class="dt">SGD</span> <span class="ot">-&gt;</span> <span class="dt">Date</span> <span class="ot">-&gt;</span> <span class="dt">Rate</span> <span class="dt">SIBOR</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">f ::</span> <span class="dt">Double</span> <span class="ot">→</span> <span class="dt">Double</span> <span class="ot">→</span> <span class="dt">String</span> <span class="ot">→</span> <span class="dt">Double</span>
+<span class="ot">g ::</span> <span class="dt">Rate</span> <span class="dt">Libor</span> <span class="ot">→</span> <span class="dt">Spot</span> <span class="dt">SGD</span> <span class="ot">→</span> <span class="dt">Date</span> <span class="ot">→</span> <span class="dt">Rate</span> <span class="dt">SIBOR</span></code></pre></div>
 <p><code>g</code> has more expressive types. In other words, you can say more about the function by looking in function type assuming you know financial domain.</p>
 <p>• Remove unclear types.</p>
 <p>• No side effects. Instead, try to write pure functions as many as possible.</p>
@@ -92,8 +90,7 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 <h2 id="haskell-to-industry">Haskell to industry</h2>
 <p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to the Python or Javascript, or Php communities. It tends to lack some useful libraries, so if you switch to Haskell you should expect to have to contribute a lot to existing libraries or write more libraries for your needs. However, I believe it should be changed soon since a lot of people have realized that the OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell, if you were building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest a “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based, and so it looks like a good alternative to almighty Javascipt. One more advantage of Elm is that you can introduce it gradually into an existing JS project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Once you are happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start.</p>
 <p>Happy hacking!</p>
-<p>At the end of this post I’d like to share a photo with one of the core Haskell developers,<br />
-<a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
+<p>At the end of this post I’d like to share a photo with one of the core Haskell developers, <a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
 <figure>
 <img src="../images/posts/haskell-exchange-2016/simon_and_me.png" />
 </figure>
@@ -105,21 +102,15 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 </ol>
 </section>
 
-<div id="comment-nav" class="pure-g-r">
-  <div class="pure-u-1-5">
-    
-    
-  </div>
-  <div class="pure-u-1-5">
-    <a id="gh-comments-button" class="pure-button" href="https://github.com/drets/drets.github.io/issues/1.0">Comment on GitHub</a>
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/1.0">Comment on GitHub</a>
 
     
-      
-        (see <a href="posts/haskell-exchange-2016.html#comment-nav">the full post</a> for a reddit link)
-      
-    
   </div>
-  <div class="pure-u-3-5">
+  <div>
+    
+    
   </div>
 </div>
 

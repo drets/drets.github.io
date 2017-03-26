@@ -2,36 +2,44 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Haskell eXchange 2016 - for λ Calculus</title>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/pure/0.4.2/pure-min.css" />
-        <link rel="stylesheet" type="text/css" href="../css/skin.css" />
+        <link rel="canonical" href="http://www.drets.life/posts/haskell-exchange-2016.html" />
+        <link rel="alternate" href="../rss.xml" title="For λ calculus by drets" type="application/rss+xml" />
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="../css/default.css" />
         <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
     </head>
-    <body class="pure-skin-drets">
-      <div class="pure-g-r">
-        <div class="pure-u-1-5">
-          <div id="navigation">
-            <div class="pure-menu pure-menu-open">
-              <a class="pure-menu-heading menu-title">
-                    For λ<br>
-                 Calculus<br>
-                <span class="menu-subtitle">by drets</span>
-              </a>
-              <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../posts.html">Posts</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../rss.xml">RSS</a></li>
-              </ul>
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../"><b>For λ calculus</b> by <i>drets</i></a>
+                </div>
+                <div class="collapse navbar-collapse" id="menu-collapse">
+                    <ul class="navbar-right nav navbar-nav">
+                        <li><a href="../">Home</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../posts.html">Posts</a></li>
+                        <li><a href="../rss.xml">RSS</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="pure-u-4-5">
-          <div id="content">
-            <h1>Haskell eXchange 2016</h1>
+        </nav>
+      <div class="content">
 
-            <p><em>October 22, 2016</em></p>
+        <h1>Haskell eXchange 2016</h1>
+<div class="info">
+  <p><em>October 22, 2016</em></p>
+  
+    Tags: <a href="../tags/haskell.html">haskell</a>, <a href="../tags/conference.html">conference</a>
+  
+</div>
 
 <p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>, the author of the book <a href="http://book.realworldhaskell.org/">“Real World Haskell”</a>. Then I’ll share some thoughts about how companies might start to integrate functional programming into their tech stack.</p>
 <div>
@@ -86,7 +94,6 @@ Pure functions are awesome but the real life programs have a bunch of side-effec
 <h2 id="don-stewarts-talk">Don Stewart’s talk</h2>
 <p>Haskell has a smart way to distinguish between pure and impure functions. It is common in the Haskell community to write function types for the functions.</p>
 <div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">makeApple ::</span> <span class="dt">Seed</span> <span class="ot">→</span> <span class="dt">IO</span> <span class="dt">Apple</span>
-
 <span class="ot">makeJuice ::</span> <span class="dt">Apple</span> <span class="ot">→</span> <span class="dt">Juice</span></code></pre></div>
 <p>If you see <code>IO</code> (it’s a Monad) somewhere in type signature, it means the function is impure.<br />
 As well, Haskell has strong static typing. Before running a program, compiler should correctly type check a program (and compiler can catch a dozens of errors!).<br />
@@ -94,9 +101,8 @@ Now, let me highlight some parts from Don Stewart’s talk. Don Stewart leads th
 <p>Here are a few tips from him:</p>
 <p>• Types help to control complexity.</p>
 <p>• Compare 2 pricing functions:</p>
-<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">f ::</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">Double</span> <span class="ot">-&gt;</span> <span class="dt">String</span> <span class="ot">-&gt;</span> <span class="dt">Double</span>
-
-<span class="ot">g ::</span> <span class="dt">Rate</span> <span class="dt">Libor</span> <span class="ot">-&gt;</span> <span class="dt">Spot</span> <span class="dt">SGD</span> <span class="ot">-&gt;</span> <span class="dt">Date</span> <span class="ot">-&gt;</span> <span class="dt">Rate</span> <span class="dt">SIBOR</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span class="ot">f ::</span> <span class="dt">Double</span> <span class="ot">→</span> <span class="dt">Double</span> <span class="ot">→</span> <span class="dt">String</span> <span class="ot">→</span> <span class="dt">Double</span>
+<span class="ot">g ::</span> <span class="dt">Rate</span> <span class="dt">Libor</span> <span class="ot">→</span> <span class="dt">Spot</span> <span class="dt">SGD</span> <span class="ot">→</span> <span class="dt">Date</span> <span class="ot">→</span> <span class="dt">Rate</span> <span class="dt">SIBOR</span></code></pre></div>
 <p><code>g</code> has more expressive types. In other words, you can say more about the function by looking in function type assuming you know financial domain.</p>
 <p>• Remove unclear types.</p>
 <p>• No side effects. Instead, try to write pure functions as many as possible.</p>
@@ -114,8 +120,7 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 <h2 id="haskell-to-industry">Haskell to industry</h2>
 <p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to the Python or Javascript, or Php communities. It tends to lack some useful libraries, so if you switch to Haskell you should expect to have to contribute a lot to existing libraries or write more libraries for your needs. However, I believe it should be changed soon since a lot of people have realized that the OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell, if you were building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest a “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based, and so it looks like a good alternative to almighty Javascipt. One more advantage of Elm is that you can introduce it gradually into an existing JS project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Once you are happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start.</p>
 <p>Happy hacking!</p>
-<p>At the end of this post I’d like to share a photo with one of the core Haskell developers,<br />
-<a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
+<p>At the end of this post I’d like to share a photo with one of the core Haskell developers, <a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
 <figure>
 <img src="../images/posts/haskell-exchange-2016/simon_and_me.png" />
 </figure>
@@ -127,26 +132,16 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 </ol>
 </section>
 
-<div id="comment-nav" class="pure-g-r">
-  <div class="pure-u-1-5">
-    
-      <div class="reddit-button">
-<script type="text/javascript" src="//www.reddit.com/static/button/button1.js">
-  reddit_target='haskell';
-  reddit_newwindow=1;
-</script>
-</div>
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/1.0">Comment on GitHub</a>
 
     
   </div>
-  <div class="pure-u-1-5">
-    <a id="gh-comments-button" class="pure-button" href="https://github.com/drets/drets.github.io/issues/1.0">Comment on GitHub</a>
-
+  <div>
     
       
     
-  </div>
-  <div class="pure-u-3-5">
   </div>
 </div>
 
@@ -167,11 +162,12 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 
 
 
-          </div>
-          <div id="footer">
-            <p>Powered by <a href="http://jaspervdj.be/hakyll">Hakyll</a></p>
-          </div>
-        </div>
       </div>
+      <div class="footer">
+        <p>Powered by <a href="http://jaspervdj.be/hakyll">Hakyll</a></p>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </body>
 </html>
