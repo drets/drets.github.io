@@ -1,8 +1,3 @@
-drets.github.io
-=================
-
-Sources branch for drets.github.io.
-
 Build instructions
 ------------------
 
@@ -50,7 +45,7 @@ directory):
 Repository layout
 -----------------
 
-The initial repository layout can be achieved as follows:
+The repository layout can be achieved as follows:
 
     mkdir -p drets.github.io
     git clone git@github.com:drets/drets.github.io.git master
