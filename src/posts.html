@@ -2,9 +2,11 @@
 title: All Posts
 ---
 <div class="post-index">
+  <ul>
     $for(posts)$
-        <p>
+        <li>
             <a href="$url$">$title$</a> - $date$
-        </p>
+        </li>
     $endfor$
+  </ul>
 </div>

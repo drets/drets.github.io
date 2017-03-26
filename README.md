@@ -20,8 +20,11 @@ The site is generated using [Hakyll](http://jaspervdj.be/hakyll/).
 Build commands and scripts (all should be ran from the `sources` root
 directory):
 
-    # Installs Hakyll and other Haskell dependencies.
-    cabal install --only-dependencies
+    # Enter nix-shell
+    nix-shell
+
+    # Installs Haskell dependencies.
+    stack build
 
     # Compiles the Hakyll executable and copies it to the sources root.
     ./build-hs.sh
@@ -47,22 +50,16 @@ directory):
 Repository layout
 -----------------
 
-The initial repository layout can be achieved as follows (procedure based on
-[this tutorial by Chris Jacob](https://gist.github.com/chrisjacob/833223)):
+The initial repository layout can be achieved as follows:
 
-    mkdir -p drets.github.io/master
-    cd drets.github.io/master
-    git init
-    touch .gitignore
-    git add .
-    git commit -m "Initial commit."
-    git remote add gh git@github.com:drets/drets.github.io
-    git push gh master
-
-    cd ..
-    git clone -o unrelated master sources
-    cd sources
-    git checkout --orphan sources
-    git commit -m "Initial commit (sources)."
+    mkdir -p drets.github.io
+    git clone git@github.com:drets/drets.github.io.git master
+    git clone git@github.com:drets/drets.github.io.git sources
+    cd sources/
+    git checkout sources
     git branch -d master
-    git push gh sources
+    cd ..
+
+Tips
+-----
+• to enable reddit button put `reddit: enabled` to template

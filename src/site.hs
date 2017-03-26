@@ -145,6 +145,21 @@ theSite = do
                     "templates/default.html" baseCtx
                 >>= relativizeUrls
 
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+
+    tagsRules tags $ \tag pattern -> do
+        let title = "Posts tagged \"" ++ tag ++ "\""
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll pattern
+            let ctx = constField "title" title
+                    `mappend` listField "posts" postCtx (return posts)
+                    `mappend` defaultContext
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/tag.html" ctx
+                >>= loadAndApplyTemplate "templates/default.html" ctx
+                >>= relativizeUrls
+
     match "posts.html" $ do
         route $ idRoute
         compile $ do
@@ -164,7 +179,7 @@ theSite = do
                 >>= loadAndApplyTemplate
                     "templates/post.html" postCtx
                 >>= loadAndApplyTemplate
-                    "templates/post-wrapper.html" postItemCtx
+                    "templates/post-wrapper.html" (tagsField "tags" tags `mappend` postItemCtx)
                 >>= loadAndApplyTemplate
                     "templates/default.html" baseCtx
                 >>= relativizeUrls

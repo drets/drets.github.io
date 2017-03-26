@@ -2,7 +2,7 @@
 title: Haskell eXchange 2016
 published: 2016-10-22T03:00:00Z
 license: CC-BY-SA
-reddit: false
+tags: haskell, conference
 gh-issue: 1
 ---
 
@@ -97,7 +97,6 @@ functions.
 
 ```haskell
 makeApple :: Seed → IO Apple
-
 makeJuice :: Apple → Juice
 ```
 
@@ -116,9 +115,8 @@ Here are a few tips from him:
 • Compare 2 pricing functions:
 
 ```haskell
-f :: Double -> Double -> String -> Double
-
-g :: Rate Libor -> Spot SGD -> Date -> Rate SIBOR
+f :: Double → Double → String → Double
+g :: Rate Libor → Spot SGD → Date → Rate SIBOR
 ```
 
 `g` has more expressive types. In other words, you can say more about the function
@@ -181,7 +179,6 @@ it should be much easier to start.
 Happy hacking!  
 
 At the end of this post I'd like to share a photo with one of the core
-Haskell developers,  
-[Simon Peyton Jones](https://en.wikipedia.org/wiki/Simon_Peyton_Jones).
+Haskell developers, [Simon Peyton Jones](https://en.wikipedia.org/wiki/Simon_Peyton_Jones).
 
 ![](/images/posts/haskell-exchange-2016/simon_and_me.png)
