@@ -43,9 +43,9 @@ directory):
 
     # Rebuilds the site, transfers it to the master root, commits the changes
     # there and publishes to GitHub.
-    # Uses a [`turtle`](https://hackage.haskell.org/package/turtle) script
+    # Uses a https://hackage.haskell.org/package/turtle script
     # defined in `Scripts.hs`.
-    drets.github.io deploy
+    drets-github-io deploy
 
 Repository layout
 -----------------

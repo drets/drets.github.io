@@ -1,0 +1,14 @@
+language: generic
+
+deploy:
+  provider: s3
+  access_key_id: AKIAJJZDDOEHDZAOG6PA
+  secret_access_key:
+    secure: CKqUKKBJYSrEUm2rSClOks1c/8ACVyzCivWKdnY88s1SMThIz+dTh9j5qhnEYd0kfuNcaDHWyZiG4dvZHMqCWZYJz0XaGCthWomGk+aqhijMDQwku9VrZ0Bp4blJL4aZB5IEjpquESQvOaWZZzYDtyiE+8BTAD6Bj0ucyGzzsiw=
+  bucket: drets.life
+  region: eu-central-1
+  skip_cleanup: true
+  acl: public_read
+  on:
+    repo: drets/drets.github.io
+    branch: master

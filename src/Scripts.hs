@@ -23,6 +23,7 @@ deploy builders conf =
     .&&. withArgs ["rebuild"]
         (theSiteRules builders & H.hakyllWithExitCode conf)
     .&&. shell "rsync -avc --delete --exclude '.git' _site/ ../master/" empty
+    .&&. shell "cp .travis.yml ../master/.travis.yml" empty
     .&&. cd "../master"
         *> shell "git rev-parse --git-dir > /dev/null" empty
     .&&. ( fold (inshell "git status --porcelain" empty) countLines
