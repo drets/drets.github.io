@@ -62,11 +62,11 @@ pandocCompilerOfOurs' withToc =
 
 rssConfig :: FeedConfiguration
 rssConfig = FeedConfiguration
-    { feedTitle = "This is a job for Lambda Calculus"
-    , feedDescription = "Haskell"
+    { feedTitle = "drets"
+    , feedDescription = "For λ calculus"
     , feedAuthorName = "Dmytro Rets"
     , feedAuthorEmail = "" -- Not used by RSS.
-    , feedRoot = "http://drets.github.io"
+    , feedRoot = "https://drets.life"
     }
 
 --------------------------------------------------------------------------------
