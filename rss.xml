@@ -28,7 +28,7 @@ I started to watch videos from <a href="https://youtu.be/3XTQSx1A3x8?list=PLbgaM
 <li><p><strong>Plotting</strong><br />
 <a href="http://www.gnuplot.info">Gnuplot</a> is a tool for plotting simple charts. I started to use it for plotting “Review pomodoros” chart.</p></li>
 <li><p><strong>Lens</strong><br />
-I worked through “Lens: a Swiss Army knife for data structures” article from not published <em>yet</em> <a href="http://intermediatehaskell.com">Haskell</a> book. Here the article on the same topic from the same author: <a href="https://artyom.me/lens-over-tea-1">Lens over tea</a>.</p></li>
+I worked through “Lens: a Swiss Army knife for data structures” article from not published <em>yet</em> <a href="http://intermediatehaskell.com">Haskell</a> book. Here’s the article on the same topic from the same author: <a href="https://artyom.me/lens-over-tea-1">Lens over tea</a>.</p></li>
 <li><p><strong>How to prove it</strong><br />
 I decided to work on <a href="https://www.amazon.com/How-Prove-Structured-Approach-2nd/dp/0521675995">“How to prove it”</a> book. It should open the door for type theory and category theory books. Since I want to do exercises from the book I started to use <a href="https://en.wikipedia.org/wiki/TeX">TeX</a> in emacs. TeX is cool and not scary at all, try it if you need to write math formulas.</p></li>
 <li><p><strong>Secure shell</strong><br />
