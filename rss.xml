@@ -7,8 +7,56 @@
         <description><![CDATA[For λ calculus]]></description>
         <atom:link href="https://drets.life/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 10 Apr 2017 11:00:00 UT</lastBuildDate>
+        <lastBuildDate>Mon, 17 Apr 2017 11:00:00 UT</lastBuildDate>
         <item>
+    <title>Weekly Review 15</title>
+    <link>https://drets.life/posts/weekly-review-2017-15.html</link>
+    <description><![CDATA[<p>It’s my weekly review for the 15th week of the 2017 year. Since I work through the “How to Prove It: A Structured Approach” book. This week is all about it.</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="this-week">This week</h2>
+<p>I finished to work through the “Quantificational Logic” chapter (chapter 2) and did the all exercises here: <a href="https://github.com/drets/how-to-prove-it/blob/master/htp_2.pdf">2.pdf</a>. It doesn’t mean that I did the all exercises correctly, so feel free to create an issue and submit a pull request on GitHub for improving the solutions.</p>
+<p>One year ago I was writing the tests using <a href="https://hackage.haskell.org/package/smallcheck-1.1.1/docs/Test-SmallCheck.html">SmallCheck</a> and had a hard time understanding quantifiers. Finally, after finishing the chapter 2 I understood what does it mean universal (<span class="math inline">∀</span>) and existential (<span class="math inline">∃</span>) quantifiers and how to use them. Now, looking at the SmallCheck documentation doesn’t scare me at all and even makes perfect sense!</p>
+<p>Moreover, chapter 2 describes such things as the family of sets <span class="math inline">ℱ</span>, the union of the family of sets <span class="math inline">∪ℱ</span>, the intersection of the family of sets <span class="math inline">∩ℱ</span>, the power set <span class="math inline">𝒫(<em>A</em>)</span> and much more.</p>
+<h2 id="next-week">Next week</h2>
+<ul>
+<li><p>I already started to work through “Proofs” (chapter 3) and even finished first 2 sections of the chapter. However, the chapter has 7 sections (the longest chapter so far and I think it’s the core chapter of the book). So, I have ambitious plans to finish the chapter 3. I only 104 exercises away! Some of these exercises can be solved using the <a href="https://app.cs.amherst.edu/~djvelleman/pd/pd.html">Proof designer</a>. It’s the small program for proving things which author of the book suggests.</p></li>
+<li><p>I need to do the exercise for my English classes and write the small essay about world overpopulation.</p></li>
+</ul>
+
+<div id="comment-nav">
+  <div>
+    
+    
+  </div>
+  <div>
+    
+    
+  </div>
+</div>
+
+<div><div class="license">
+  <p>
+    <span class="inline-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </span>
+    <span class="inline-centered">
+      Post licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </span>
+  </p>
+</div>
+
+</div>
+]]></description>
+    <pubDate>Mon, 17 Apr 2017 11:00:00 UT</pubDate>
+    <guid>https://drets.life/posts/weekly-review-2017-15.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+<item>
     <title>Weekly Review 14</title>
     <link>https://drets.life/posts/weekly-review-2017-14.html</link>
     <description><![CDATA[<blockquote>
