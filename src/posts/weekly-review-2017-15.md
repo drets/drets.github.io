@@ -20,6 +20,6 @@ Moreover, chapter 2 describes such things as the family of sets $\mathcal{F}$, t
 Next week
 ---------
 
-- I already started to work through “Proofs” (chapter 3) and even finished first 2 sections of the chapter. However, the chapter has 7 sections (the longest chapter so far and I think it's the core chapter of the book). So, I have ambitious plans to finish the chapter 3. I only 104 exercises away! Some of these exercises can be solved using the [Proof designer](https://app.cs.amherst.edu/~djvelleman/pd/pd.html). It's the small program for proving things which author of the book suggests.
+- I already started to work through “Proofs” (chapter 3) and even finished first 2 sections of the chapter. However, the chapter has 7 sections (the longest chapter so far and I think it's the core chapter of the book). So, I have ambitious plans to finish the chapter 3. I only 104 exercises away! Some of these exercises can be solved using the [Proof designer](https://app.cs.amherst.edu/~djvelleman/pd/pd.html). It's the small program which author of the book suggests for proving things.
 
 - I need to do the exercise for my English classes and write the small essay about world overpopulation.
