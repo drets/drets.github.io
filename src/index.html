@@ -3,12 +3,12 @@ title: Recent Posts
 ---
 $for(post-teasers)$
   <div class="post-teaser">
-    <h2>$title$</h2>
+    <h2><a href=$url$>$title$</a></h2>
 
     $if(teaser)$
       $teaser$
     $endif$
 
-    <p><a href=$url$><i>Read more...</i></a></p>
+    <hr />
   </div>
 $endfor$
