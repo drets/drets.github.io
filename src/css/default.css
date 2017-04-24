@@ -92,3 +92,7 @@ code {
     line-height: 1;
     font-size: 80%;
 }
+
+a, a:hover {
+    color: #337ab7
+}
