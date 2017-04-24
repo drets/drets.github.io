@@ -7,8 +7,75 @@
         <description><![CDATA[For λ calculus]]></description>
         <atom:link href="https://drets.life/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 17 Apr 2017 11:00:00 UT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Apr 2017 11:00:00 UT</lastBuildDate>
         <item>
+    <title>Weekly Review 16</title>
+    <link>https://drets.life/posts/weekly-review-2017-16.html</link>
+    <description><![CDATA[<p>This is my 4th weekly review of the 16th week 2017 year. Life is good!</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="this-week">This week</h2>
+<ul>
+<li><p><em>“How to prove it”</em>:<br />
+I am working on the exercises for the 4th section of “Proofs” chapter (chapter 3). The chapter is quite big (it has 7 sections) and I think it will take one more week to finish the chapter. “Proofs” chapter obviously teaches how to make proofs of statements using specific techniques. In the 1st section, the author describes basic proof strategies, like how to proof a conclusion of the form <span class="math inline"><em>P</em> → <em>Q</em></span>. In the 2nd section, he adds the proofs involving negations and conditionals. The 3d section introduces proofs involving quantifiers and 4th section adds proofs involving conjunctions and biconditionals. The chapter has quite a lot of exercises which can be solved using “Proof Designer” application and I like it, since using the Proof designer, you don’t need to type a lot of characters and the program checks your correctness. Thus, I can be sure that I did a proof correctly which is quite important for my confidence. That’s all about the book, I’ll publish the solutions which definitely should have some errors when I finish the chapter 3.</p></li>
+<li><p><em>Emacs</em>:<br />
+I started to use <em>again</em> the <a href="https://github.com/anler/centered-window-mode">centered-window-mode</a> and I quite like it: now my eyes instead of looking mostly on the corner of display look at center.</p></li>
+<li><p><em>Nice browser extension</em>:<br />
+A browser extension that turns package/module names on Github into links (Chrome only): <a href="https://github.com/fiatjaf/module-linker">module-linker</a></p></li>
+<li><p><em>Future in Rust</em>:<br />
+I have read this post: <a href="http://aturon.github.io/blog/2016/08/11/futures/" class="uri">http://aturon.github.io/blog/2016/08/11/futures/</a> and looked at the implementation of “Future” feature, quite interesting stuff: the purpose is similar to javascript promises, but an implementation is completely different. The future code compiles down to an actual state machine which progresses via callbacks (with no overhead).</p></li>
+<li><p><em>Lenses in practice</em>:<br />
+Enjoyed watching this video: <a href="https://youtu.be/QZy4Yml3LTY">John Wiegley: Putting Lenses to Work</a>. Especially last part of the video with advanced examples.</p></li>
+<li><p><em>Music</em>:<br />
+Suddenly I started to listen new to me genres of music: Downtempo, French House, lounge music, Future Jazz.<br />
+These albums play in my player:</p>
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Stéphane_Pompougnac">Stephane Pompougnac</a> − Hotel Costes</p></li>
+<li><p><a href="https://de.wikipedia.org/wiki/John_Beltran">John Beltran</a> − Americano</p></li>
+<li><p><a href="https://fr.wikipedia.org/wiki/Minus_8">Minus 8</a> − Minuit</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Parov_Stelar">Parov Stelar</a> − The Princess</p></li>
+</ul></li>
+</ul>
+<h2 id="next-week">Next week</h2>
+<ul>
+<li>I <em>hope</em> to finish the chapter 3.</li>
+<li>Need to book the English lesson on this week and prepare for the lesson by making the essay.</li>
+</ul>
+
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/2.0">Comment on GitHub</a>
+
+    
+  </div>
+  <div>
+    
+    
+  </div>
+</div>
+
+<div><div class="license">
+  <p>
+    <span class="inline-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </span>
+    <span class="inline-centered">
+      Post licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </span>
+  </p>
+</div>
+
+</div>
+]]></description>
+    <pubDate>Mon, 24 Apr 2017 11:00:00 UT</pubDate>
+    <guid>https://drets.life/posts/weekly-review-2017-16.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+<item>
     <title>Weekly Review 15</title>
     <link>https://drets.life/posts/weekly-review-2017-15.html</link>
     <description><![CDATA[<p>It’s my weekly review for the 15th week of the 2017 year. Since I work through the “How to Prove It: A Structured Approach” book. This week is all about it.</p>
