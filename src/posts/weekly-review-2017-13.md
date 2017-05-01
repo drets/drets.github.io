@@ -5,7 +5,7 @@ license: CC-BY-SA
 tags: review
 ---
 
-I am starting doing my weekly reviews. I am going to share the things which kept my attention, my opinion on these things and what I am going to do next. Since these reviews are mostly for me I disabled “Comment on GitHub” button. If you have questions or suggestions feel free to send me an email. You may find my email on GitHub and link to my GitHub account is on “About” page. Let's start.
+I am starting doing my weekly reviews. I am going to share the things which kept my attention, my opinion on these things and what I am going to do next. ~~Since these reviews are mostly for me I disabled “Comment on GitHub” button~~ _(friend of mine suggested to enable the comments)_. If you have questions or suggestions feel free to send me an email. ~~You may find my email on GitHub and link to my GitHub account is on “About” page~~ _(I added the email address to “About” page)_. Let's start.
 
 <div></div><!--more-->
 
