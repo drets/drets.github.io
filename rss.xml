@@ -7,8 +7,74 @@
         <description><![CDATA[For λ calculus]]></description>
         <atom:link href="https://drets.life/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 24 Apr 2017 11:00:00 UT</lastBuildDate>
+        <lastBuildDate>Mon, 01 May 2017 11:00:00 UT</lastBuildDate>
         <item>
+    <title>Weekly Review 17</title>
+    <link>https://drets.life/posts/weekly-review-2017-17.html</link>
+    <description><![CDATA[<p>My fifth weekly review is here. I am continuing to work on the third chapter of “How to prove it” book. I started to do a long distance walk.</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="done-on-this-week">Done on this week</h2>
+<ul>
+<li><p>“How to prove it“<br />
+I didn’t manage to finish the exercises in chapter three. However, I am not sad. Guess, why? Because I learned how to make the proofs, which is the main purpose of this chapter and the whole book, I think.<br />
+I am at the end of the fifth section of the chapter. The chapter has seven sections. Sections six and seven have fewer exercises then three and four, so I feel that I’ll finish the chapter on this week. Fingers crossed.</p></li>
+<li><p>I found a new interesting activity, which is also useful. I do a long distance walking (well, if seven km is a long distance) and listen to an audiobook. So, on this week I walked around 40 km and finished to listen “<a href="https://ru.wikipedia.org/wiki/О_чём_я_говорю,_когда_говорю_о_беге">О чём я говорю, когда говорю о беге</a>”. Pretty nice book. After listening to the book, I felt the desire to run a marathon distance, I wish to do it at some point in the future.<br />
+Next book for my walking activity is written by the same author: “<a href="https://ru.wikipedia.org/wiki/Охота_на_овец">Охота на овец</a>”.</p></li>
+<li><p>The interesting talk about the extended functor family:<br />
+<a href="https://youtu.be/JZPXzJ5tp9w">George Wilson − The Extended Functor Family</a></p></li>
+<li><p>Handy one-liner bash, the command which joins the images. This is from <a href="https://www.imagemagick.org/script/index.php">ImageMagick</a> software.</p>
+<div class="sourceCode"><pre class="sourceCode sh"><code class="sourceCode bash"><span class="ex">convert</span> input1.png input2.png input3.png -append output.png</code></pre></div>
+<p><code>-append</code> join the images vertically<br />
+<code>+append</code> join the images horizontally</p></li>
+<li>Some music which I listen during the week:
+<ol type="1">
+<li><a href="https://en.wikipedia.org/wiki/Acoustic_Alchemy">Acoustic Alchemy</a>: all discography.</li>
+<li><a href="https://en.wikipedia.org/wiki/Tangerine_Dream">Tangerine Dream</a>: Le Parc, Melrose, Rockoon, Tiger.</li>
+<li>The Rolling Stones: <a href="https://en.wikipedia.org/wiki/Beggars_Banquet">Beggars Banquet</a>.</li>
+</ol></li>
+</ul>
+<h2 id="next-week-goals">Next week goals</h2>
+<ul>
+<li>third chapter of “How to prove it” book is done</li>
+<li>40 km of walking activity</li>
+<li>take an English lesson</li>
+</ul>
+
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/2.0">Comment on GitHub</a>
+
+    
+  </div>
+  <div>
+    
+    
+  </div>
+</div>
+
+<div><div class="license">
+  <p>
+    <span class="inline-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </span>
+    <span class="inline-centered">
+      Post licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </span>
+  </p>
+</div>
+
+</div>
+]]></description>
+    <pubDate>Mon, 01 May 2017 11:00:00 UT</pubDate>
+    <guid>https://drets.life/posts/weekly-review-2017-17.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+<item>
     <title>Weekly Review 16</title>
     <link>https://drets.life/posts/weekly-review-2017-16.html</link>
     <description><![CDATA[<p>This is my 4th weekly review of the 16th week 2017 year. Life is good!</p>
@@ -176,7 +242,7 @@ These albums play in my player:</p>
 <item>
     <title>Weekly Review 13</title>
     <link>https://drets.life/posts/weekly-review-2017-13.html</link>
-    <description><![CDATA[<p>I am starting doing my weekly reviews. I am going to share the things which kept my attention, my opinion on these things and what I am going to do next. Since these reviews are mostly for me I disabled “Comment on GitHub” button. If you have questions or suggestions feel free to send me an email. You may find my email on GitHub and link to my GitHub account is on “About” page. Let’s start.</p>
+    <description><![CDATA[<p>I am starting doing my weekly reviews. I am going to share the things which kept my attention, my opinion on these things and what I am going to do next. <del>Since these reviews are mostly for me I disabled “Comment on GitHub” button</del> <em>(friend of mine suggested to enable the comments)</em>. If you have questions or suggestions feel free to send me an email. <del>You may find my email on GitHub and link to my GitHub account is on “About” page</del> <em>(I added the email address to “About” page)</em>. Let’s start.</p>
 <div>
 
 </div>
