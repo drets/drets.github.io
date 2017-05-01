@@ -104,7 +104,7 @@ a, a:hover {
 
 .post-teaser {
     border-radius: 10px;
-    border: 1px solid rgba(51, 122, 183, .1);
+    border: 1px solid rgba(51, 122, 183, .2);
     padding: 0 40px 10px 40px;
     margin: 50px 0;
 }
