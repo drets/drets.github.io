@@ -60,8 +60,11 @@ figure {
 
 img {
     max-width: 100%;
-    padding:1px;
-    border:1px solid #021a40;
+    border: 1px solid #ccccd0;
+    background-color: #fafafc;
+    padding: 0.5em;
+    box-shadow: 0 0 5px #ccc inset;
+    border-radius: 3px;
 }
 
 .icon {
@@ -69,8 +72,11 @@ img {
     height: auto;
     margin: 10px;
     opacity: 0.7;
-    padding: 0;
-    border: none;
+    padding: 5px;
+}
+
+.icon:hover {
+    opacity: 0.9;
 }
 
 .rss {
@@ -80,6 +86,12 @@ img {
     opacity: 0.5;
     padding: 0;
     border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.rss:hover {
+    opacity: 0.7;
 }
 
 sourceCode {
@@ -124,8 +136,11 @@ a, a:hover {
 }
 
 .tags, .post-teaser {
-    border-radius: 10px;
-    border: 1px solid rgba(51, 122, 183, .2);
+    border: 1px solid #ccccd0;
+    background-color: #fafafc;
+    padding: 0.5em;
+    box-shadow: 0 0 5px #ccc inset;
+    border-radius: 3px;
 }
 
 .post-teaser {
