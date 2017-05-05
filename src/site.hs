@@ -152,7 +152,7 @@ theSite = do
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")
 
     tagsRules tags $ \tag pattern -> do
-        let title = "Posts tagged \"" ++ tag ++ "\""
+        let title = "Posts tagged as \"" ++ tag ++ "\""
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll pattern
@@ -170,7 +170,7 @@ theSite = do
             posts <- recentFirst =<< loadAll allPosts
             getResourceBody
                 >>= applyAsTemplate
-                    (listField "posts" postItemCtx (return posts))
+                    (tagCloudField "cloud" 100 300 tags <> (listField "posts" postItemCtx (return posts)))
                 >>= loadAndApplyTemplate
                     "templates/default.html" baseCtx
                 >>= relativizeUrls

@@ -3,6 +3,7 @@ body {
     font-size: 18px;
     color: #444;
     margin: auto;
+    font-family: Arial, sans-serif;
 }
 
 p {
@@ -18,12 +19,12 @@ p {
 }
 
 h1,h2 {
-    text-align: center
+    text-align: center;
 }
 
 h1,h2,h3 {
     line-height: 1.2;
-    margin: 60px 0 30px 0;
+    margin: 50px 0 25px 0;
 }
 
 #gh-comments-button {
@@ -61,6 +62,19 @@ img {
     max-width: 100%;
 }
 
+.icon {
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+
+.rss {
+    width: 15px;
+    margin-bottom: 5px;
+    height: auto;
+    opacity: 0.5;
+}
+
 sourceCode {
     overflow-x: unset;
 }
@@ -94,17 +108,25 @@ a, a:hover {
     color: #337ab7
 }
 
-.post-teaser h2 {
+.tags h2, .post-teaser h2 {
     margin: 35px 0 0 0;
 }
 
-.post-teaser p {
+.tags p, .post-teaser p {
     margin-top: 1em;
 }
 
-.post-teaser {
+.tags, .post-teaser {
     border-radius: 10px;
     border: 1px solid rgba(51, 122, 183, .2);
+}
+
+.post-teaser {
     padding: 0 40px 10px 40px;
     margin: 50px 0;
+}
+
+.tags {
+    padding: 0 40px;
+    margin: 60px 0 50px 0;
 }

@@ -2,11 +2,19 @@
 title: All Posts
 ---
 <div class="post-index">
-  <ol reversed>
-    $for(posts)$
-        <li>
-            <a href="$url$">$title$</a> − $date$
-        </li>
-    $endfor$
-  </ol>
+  <div class="tags">
+    <h2>Tagcloud</h2>
+    <p>
+      $cloud$
+    </p>
+  </div>
+  <div>
+    <ol reversed>
+      $for(posts)$
+      <li>
+        <a href="$url$">$title$</a> − $date$
+      </li>
+      $endfor$
+    </ol>
+  </div>
 </div>
