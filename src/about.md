@@ -6,7 +6,7 @@ I am Dmytro Rets, a Ukrainian citizen, ~~working at â€œFandom powered by Wikiaâ€
 If you want, you may contact me via
 [<img src="/images/contact/github.svg" class="icon" />](https://github.com/drets "github")
 [<img src="/images/contact/linkedin.svg" class="icon" />](https://www.linkedin.com/in/drets "linkedin")
-<a href="mailto:dmitryrets@gmail.com"><img src="/images/contact/gmail.svg" class="icon" /></a>
+<a href="mailto:dmitryrets@gmail.com"><img src="/images/contact/gmail.svg" class="icon" title="email" /></a>
 
 <img src="/images/smile.jpg" />
 
