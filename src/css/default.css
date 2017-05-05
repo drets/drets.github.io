@@ -31,13 +31,18 @@ h1,h2,h3 {
     color: white;
     background-color: #6cc644;
     border-radius: 4px;
-    font-size: x-small;
     font-weight: bold;
+    margin: 30px;
+    opacity: 0.8;
+}
+
+#gh-comments-button:hover {
+    opacity: 1;
 }
 
 .reddit-button {
-    padding-top: 0.3em;
-    margin-left: 2em;
+    padding-top: 10px;
+    margin: 30px;
 }
 
 .license {
@@ -51,7 +56,9 @@ h1,h2,h3 {
 
 #comment-nav {
     display: flex;
-    margin: 30px;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 0 0;
 }
 
 figure {
@@ -118,9 +125,9 @@ code {
 .info {
     font-style: italic;
     margin: 2em 0;
-    padding-left: 0.5em;
-    line-height: 1;
-    font-size: 80%;
+    padding-left: 1em;
+    line-height: 0.5;
+    font-size: small;
 }
 
 a, a:hover {
