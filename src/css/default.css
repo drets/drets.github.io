@@ -136,7 +136,7 @@ a, a:hover {
 
 .tags h2, .post-teaser h2 {
     margin: 35px 0 0 0;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 .tags p, .post-teaser p {
