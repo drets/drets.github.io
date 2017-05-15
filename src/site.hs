@@ -157,8 +157,9 @@ theSite = do
         compile $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
-                    `mappend` listField "posts" postCtx (return posts)
-                    `mappend` defaultContext
+                    <> listField "posts" postCtx (return posts)
+                    <> defaultContext
+                    <> constField "amount" (show $ length posts - 1)
             makeItem ""
                 >>= loadAndApplyTemplate "templates/tag.html" ctx
                 >>= loadAndApplyTemplate "templates/default.html" ctx
@@ -170,7 +171,9 @@ theSite = do
             posts <- recentFirst =<< loadAll allPosts
             getResourceBody
                 >>= applyAsTemplate
-                    (tagCloudField "cloud" 100 300 tags <> (listField "posts" postItemCtx (return posts)))
+                    (tagCloudField "cloud" 100 300 tags <>
+                     (listField "posts" postItemCtx (return posts)) <>
+                     constField "amount" (show $ length posts - 1))
                 >>= loadAndApplyTemplate
                     "templates/default.html" baseCtx
                 >>= relativizeUrls
