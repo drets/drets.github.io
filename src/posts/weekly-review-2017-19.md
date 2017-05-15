@@ -6,6 +6,8 @@ tags: review
 gh-issue: 2
 ---
 
+Trip to Warsaw. Started to work on chapter four.
+
 <div></div><!--more-->
 
 Last week
