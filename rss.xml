@@ -7,8 +7,58 @@
         <description><![CDATA[For λ calculus]]></description>
         <atom:link href="https://drets.life/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Tue, 09 May 2017 11:00:00 UT</lastBuildDate>
+        <lastBuildDate>Mon, 15 May 2017 11:00:00 UT</lastBuildDate>
         <item>
+    <title>Weekly Review 19</title>
+    <link>https://drets.life/posts/weekly-review-2017-19.html</link>
+    <description><![CDATA[<div>
+
+</div>
+<!--more-->
+<h2 id="last-week">Last week</h2>
+<p>I finished chapter three. The solutions of the exercises can be found here: <a href="https://github.com/drets/how-to-prove-it/blob/master/htp_3.pdf">htp_3.pdf</a>. I am on the second section of the “Relations” chapter.</p>
+<p>After finishing the “How to prove it” book I want to work on the “<a href="http://a.co/iJSr8IR">Verified Functional Programming in Agda</a>” book. Some knowledge of Agda may help me to become a better programmer.</p>
+<p>My family had to travel to Warsaw for a few days. Here is one shot from there:</p>
+<p><img src="../images/posts/weekly-review-2017-19/warsaw.jpg" width="300" /></p>
+<p>I tempted to think it’s the main reason why I walked only 27 kilometers. Even if I walked only 27 kilometers it was enough time to finish listening to my second audiobook − “A Wild Sheep Chase”. I started to listen to another book that called “Hard to Be a God” by Arkady and Boris Strugatsky. It’s really cool that I do sports activity in conjunction with listening fiction books.</p>
+<p>I listen to the really nice talk from “The Haskell Cast” series: <a href="http://www.haskellcast.com/episode/013-john-wiegley-on-categories-and-compilers">Episode 13 - John Wiegley on Categories and Compilers</a>.</p>
+<p>I played with “<a href="https://monad.cat/posts/2016-05-10-barbed-wire.html">Programming with bananas and barbed wire. Part 1</a>” tutorial; pretty cool introduction to recursion schemes.</p>
+<h2 id="this-week">This week</h2>
+<p>I am going to walk 42 kilometers.</p>
+<p>I am going to finish sections two <em>and</em> three of the “Relations” chapter.</p>
+
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/2.0">Comment on GitHub</a>
+
+    
+  </div>
+  <div>
+    
+    
+  </div>
+</div>
+
+<div><div class="license">
+  <p>
+    <span class="inline-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </span>
+    <span class="inline-centered">
+      Post licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </span>
+  </p>
+</div>
+
+</div>
+]]></description>
+    <pubDate>Mon, 15 May 2017 11:00:00 UT</pubDate>
+    <guid>https://drets.life/posts/weekly-review-2017-19.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+<item>
     <title>Weekly Review 18</title>
     <link>https://drets.life/posts/weekly-review-2017-18.html</link>
     <description><![CDATA[<p>Chapter three is HUGE, goal analysis and more.</p>
