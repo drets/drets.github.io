@@ -2,15 +2,17 @@
 title: Recent Posts
 ---
 $for(post-teasers)$
-  <div class="post-teaser-wrapper">
-    <div class="post-teaser" onclick="location.href='$url$';">
-      <h2>$title$</h2>
+  <div class="post-teaser" onclick="location.href='$url$';">
+    <h2>$title$</h2>
 
-      $if(teaser)$
-        $teaser$
-      $endif$
+    $if(teaser)$
+      $teaser$
+    $endif$
 
-    </div>
   </div>
 $endfor$
-<center><a href="/posts.html">see all</a></center>
+<div class="view-all">
+  <center>
+    <a href="/posts.html">VIEW ALL</a>
+  </center>
+</div>
