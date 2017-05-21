@@ -119,9 +119,7 @@ pre code {
 }
 
 code {
-    border: 1px solid #E1E1E8;
     font-family: DejaVu Sans Mono, monospace;
-    background-color: #F7F7FA;
     color: #373D3F;
     padding: 2px 4px;
     font-size: 90%;
@@ -133,6 +131,12 @@ code {
     padding-left: 1em;
     line-height: 0.5;
     font-size: small;
+}
+
+pre {
+    border-top: 3px solid green;
+    border-bottom: 3px solid green;
+    background-color: transparent;
 }
 
 a, a:hover {
