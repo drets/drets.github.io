@@ -70,16 +70,16 @@ pandocCompilerOfOurs = do
 ourTransform :: Pandoc -> Pandoc
 ourTransform p@(Pandoc meta blocks) = (Pandoc meta (ert:blocks))
   where
-    ert = Para [ Emph [ Str $ "(", Str $ timeEstimateString p, Str $ " read)"] ]
+    ert = Para [ SmallCaps [ Str $ timeEstimateString p, Str $ " read"] ]
 
 timeEstimateString :: Pandoc -> String
 timeEstimateString = toClockString . timeEstimateSeconds
 
 toClockString :: Int -> String
 toClockString i
-    | i >= 60 * 60 = show hours ++ "h" ++ show minutes ++ "m" ++ show seconds ++ "s"
-    | i >= 60      = show minutes ++ "m" ++ show seconds ++ "s"
-    | otherwise    = show seconds ++ "s"
+    | i >= 60 * 60 = show hours ++ "hour " ++ show minutes ++ "min " ++ show seconds ++ "sec"
+    | i >= 60      = show minutes ++ "min " ++ show seconds ++ "sec"
+    | otherwise    = show seconds ++ "sec"
   where
     hours   = i `quot` (60*60)
     minutes = (i `rem` (60*60)) `quot` 60
