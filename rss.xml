@@ -7,8 +7,100 @@
         <description><![CDATA[For λ calculus]]></description>
         <atom:link href="https://drets.life/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Mon, 15 May 2017 11:00:00 UT</lastBuildDate>
+        <lastBuildDate>Tue, 23 May 2017 11:00:00 UT</lastBuildDate>
         <item>
+    <title>Conditionals</title>
+    <link>https://drets.life/posts/conditionals.html</link>
+    <description><![CDATA[<p><span style="font-variant: small-caps;">1min 43sec read</span></p>
+<p>I decided to write about conditional sentences. It should help <em>me</em> to memorize how to properly build the conditional sentences. Conditional sentence is built from “if” (condition) and “main” (result) clauses. There are <strong>three</strong> main types of conditional sentences.</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="zero-conditional">Zero Conditional</h2>
+<p>Zero Conditional is used when we talk about general facts. Both parts of the conditional clause use “Present Simple” time.</p>
+<div class="note">
+<p>If you finish the university, you become smarter.<br />
+If you study math, your logic skills become better.<br />
+You get a present if you write to Santa.</p>
+</div>
+<h2 id="one-conditional">One Conditional</h2>
+<ol type="a">
+<li>The first type of First Conditional is used when we talk about possible events that may possibly happen. “if” clause uses “Present Simple” time, and “main” clause uses “Future Indefinite” time.</li>
+</ol>
+<div class="note">
+<p>If I have enough time, I will study math.<br />
+If I have a working visa, I will start to work in Germany.<br />
+I will walk around the lake if I write a post in my blog.</p>
+</div>
+<p>    b. The second type of First Conditional is used when we talk about events that unlikely happen. “if” clause uses “should + infinitive” and “main” clause uses “Future Indefinite” time.</p>
+<div class="note">
+<p>If I should have enough time, I will study category theory.<br />
+If I shouldn’t have a working visa, I will finish the “How to prove it” book till July.<br />
+I will start to work on “Verified Functional Programming in Agda” if I should finish the “How to prove it” book.</p>
+</div>
+<h2 id="two-conditional">Two Conditional</h2>
+<p>Second Conditional is used when we talk about an unreal event in the present time. “if” clause uses “Past Simple” time and “main” clause uses “would + infinitive”.</p>
+<div class="note">
+<p>If I had enough time, I would study Japanese.<br />
+If I could surf, I would fly to Australia.<br />
+I would become rich if I won a lottery.</p>
+</div>
+<h2 id="three-conditional">Three Conditional</h2>
+<p>Third Conditional is used when we talk about an <em>absolutely</em> unreal event in the past. “if” clause uses “Past Perfect Subjunctive” and “main” clause uses “would + Perfect infinitive”.</p>
+<div class="note">
+<p>If I had had enough time, I would have studied math last year.<br />
+If I had written a post in my blog, I would have walked around the lake yesterday.<br />
+I would have bought the island in the Pacific Ocean last year if I had won the national lottery.</p>
+</div>
+<h2 id="mixed-conditionals">Mixed Conditionals</h2>
+<ol type="a">
+<li>“if” clause is in the past and “main” clause is in the present or future.</li>
+</ol>
+<div class="note">
+<p>If you had run a marathon last year, you would feel better now.<br />
+If I had written a post in my blog, I would walk around the lake now.<br />
+I would be rich now if I had won a lottery yesterday.</p>
+</div>
+<p>    b. “if” clause doesn’t have a specific time and “main” clause is in the past.</p>
+<div class="note">
+<p>If she wasn’t so smart, she would not have passed her exam.<br />
+If I wasn’t so brave, I wouldn’t have jumped with a parachute.<br />
+She would have passed her exam if she wasn’t so stupid.</p>
+</div>
+
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/3.0">Comment on GitHub</a>
+
+    
+  </div>
+  <div>
+    
+    
+  </div>
+</div>
+
+<div><div class="license">
+  <p>
+    <span class="inline-centered">
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+        <img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a>
+    </span>
+    <span class="inline-centered">
+      Post licensed under a
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </span>
+  </p>
+</div>
+
+</div>
+]]></description>
+    <pubDate>Tue, 23 May 2017 11:00:00 UT</pubDate>
+    <guid>https://drets.life/posts/conditionals.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+<item>
     <title>Weekly Review 19</title>
     <link>https://drets.life/posts/weekly-review-2017-19.html</link>
     <description><![CDATA[<p><span style="font-variant: small-caps;">50sec read</span></p>
