@@ -129,8 +129,8 @@ code {
 }
 
 pre {
-    border-top: 3px solid green;
-    border-bottom: 3px solid green;
+    border-left: 3px solid green;
+    padding-left: 15px;
     background-color: transparent;
 }
 
