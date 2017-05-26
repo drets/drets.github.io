@@ -1,7 +1,6 @@
 ---
 title: Conditionals
 published: 2017-05-23T11:00:00
-license: CC-BY-SA
 tags: english
 gh-issue: 3
 ---

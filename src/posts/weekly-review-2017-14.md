@@ -1,7 +1,6 @@
 ---
 title: Weekly Review 14
 published: 2017-04-10T11:00:00
-license: CC-BY-SA
 tags: review
 ---
 

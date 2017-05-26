@@ -1,7 +1,6 @@
 ---
 title: Weekly Review 13
 published: 2017-04-03T11:00:00
-license: CC-BY-SA
 tags: review
 ---
 

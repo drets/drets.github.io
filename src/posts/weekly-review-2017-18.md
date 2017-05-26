@@ -1,7 +1,6 @@
 ---
 title: Weekly Review 18
 published: 2017-05-09T11:00:00
-license: CC-BY-SA
 tags: review
 gh-issue: 2
 ---

@@ -1,7 +1,6 @@
 ---
 title: Weekly Review 16
 published: 2017-04-24T11:00:00
-license: CC-BY-SA
 tags: review
 gh-issue: 2
 ---

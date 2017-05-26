@@ -1,7 +1,6 @@
 ---
 title: Haskell eXchange 2016
 published: 2016-10-22T03:00:00Z
-license: CC-BY-SA
 tags: haskell, conference
 gh-issue: 1
 ---

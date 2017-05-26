@@ -148,17 +148,10 @@ rssConfig = FeedConfiguration
 
 --------------------------------------------------------------------------------
 postDateCtx :: Context String
-postDateCtx = dateField "date" "%B %e, %Y"
+postDateCtx = dateField "date" "%Y-%m-%d"
 
 postItemCtx :: Context String
 postItemCtx = postDateCtx <> baseCtx
-
-licenseInfoCtx :: Context String
-licenseInfoCtx = field "license-info" $ \it -> do
-    lic <- itemIdentifier it `getMetadataField` "license"
-    case lic of
-        Just "CC-BY-SA" -> loadBody "fragments/cc-by-sa.html"
-        _               -> return ""
 
 redditCtx :: Context String
 redditCtx = field "reddit-button" $ \it -> do
@@ -182,7 +175,7 @@ teaserCtx = teaserField "teaser" "content" <> postItemCtx
 
 postCtx :: Context String
 postCtx = postDateCtx
-    <> ghCommentsCtx <> licenseInfoCtx <> redditCtx
+    <> ghCommentsCtx <> redditCtx
     <> baseCtx
 
 baseCtx :: Context String
@@ -242,15 +235,23 @@ theSite = do
                 >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
-    match "posts.html" $ do
+    match "index.html" $ do
         route $ idRoute
         compile $ do
             posts <- recentFirst =<< loadAll allPosts
             getResourceBody
                 >>= applyAsTemplate
-                    (tagCloudField "cloud" 100 300 tags <>
-                     (listField "posts" postItemCtx (return posts)) <>
+                     ((listField "posts" postItemCtx (return posts)) <>
                      constField "amount" (show $ length posts - 1))
+                >>= loadAndApplyTemplate
+                    "templates/default.html" baseCtx
+                >>= relativizeUrls
+
+    match "tags.html" $ do
+        route $ idRoute
+        compile $ do
+            getResourceBody
+                >>= applyAsTemplate (tagCloudField "cloud" 100 300 tags)
                 >>= loadAndApplyTemplate
                     "templates/default.html" baseCtx
                 >>= relativizeUrls
@@ -267,19 +268,6 @@ theSite = do
                 >>= loadAndApplyTemplate
                     "templates/default.html" baseCtx
                 >>= relativizeUrls
-
-    match "index.html" $ do
-        route $ idRoute
-        compile $ do
-            barePosts <- fmap (take 6) . recentFirst
-                =<< loadAllSnapshots allPosts "content"
-            getResourceBody
-                >>= applyAsTemplate
-                    (listField "post-teasers" teaserCtx (return barePosts))
-                >>= loadAndApplyTemplate
-                    "templates/default.html" baseCtx
-                >>= relativizeUrls
-
 
     match "repo/*" $ do
         route   $ customRoute $ takeFileName . toFilePath

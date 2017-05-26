@@ -1,7 +1,12 @@
-<ol start="$amount$" reversed>
-    $for(posts)$
-        <li>
-            <a href="$url$">$title$</a> − $date$
-        </li>
-    $endfor$
-</ol>
+<div class="posts">
+  <div>
+    <ol start="$amount$" reversed>
+      $for(posts)$
+      <li>
+        <a href="$url$">$title$</a><br/>
+        <small>date: $date$</small>
+      </li>
+      $endfor$
+    </ol>
+  </div>
+</div>
