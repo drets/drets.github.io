@@ -159,6 +159,7 @@ a:visited {
 }
 
 .post-teaser {
+    position: relative;
     cursor: pointer;
     padding: 0 40px 10px 40px;
     margin: 60px 0;
@@ -212,4 +213,15 @@ a:visited {
     cursor: pointer;
     overflow: hidden;
     outline: none;
+}
+
+.title-background {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   z-index: -1;
+   overflow: hidden;
+   opacity: 0.05;
 }

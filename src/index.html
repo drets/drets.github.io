@@ -3,11 +3,10 @@ title: Recent Posts
 ---
 $for(post-teasers)$
   <div class="post-teaser" onclick="location.href='$url$';">
-    <h2>$title$</h2>
-
-    $if(teaser)$
-      $teaser$
-    $endif$
+    <div class="title-background">
+      <h2><i>$title$</i></h2>
+    </div>
+    $teaser$
 
   </div>
 $endfor$
