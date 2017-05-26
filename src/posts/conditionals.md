@@ -68,7 +68,7 @@ a. “if” clause is in the past and “main” clause is in the present or fut
 
 <div class="note">
 If you had run a marathon last year, you would feel better now.  
-If I had written a post in my blog, I would walk around the lake now.  
+If I had written a post in my blog, I would be walking around the lake now.  
 I would be rich now if I had won a lottery yesterday.  
 </div>
 \ 
@@ -78,5 +78,5 @@ b. “if” clause doesn't have a specific time and “main” clause is in the 
 <div class="note">
 If she wasn't so smart, she would not have passed her exam.  
 If I wasn't so brave, I wouldn't have jumped with a parachute.  
-She would have passed her exam if she wasn't so stupid.  
+She would have passed her exam if she hadn't been so stupid.  
 </div>
