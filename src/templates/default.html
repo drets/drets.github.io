@@ -15,12 +15,15 @@
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="/">“For λ calculus” by <i>drets</i></a>
+          <div class="navbar-nav w-50 justify-content-end">
+            <a class="navbar-brand" href="/">“For λ calculus” by <i>drets</i></a>
+          </div>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav w-100 justify-content-end">
-              <a class="nav-item nav-link py-1" href="/posts.html">archive</a>
-              <a class="nav-item nav-link py-1" href="/about.html">about</a>
-              <a class="nav-item nav-link py-1" href="/rss.xml"><img src="/images/rss.svg" class="rss" /></a>
+            <div class="navbar-nav w-100 justify-content-center align-items-end">
+              <a class="nav-item nav-link px-4 py-1" href="/posts.html">archive</a>
+              <div class="up-btn nav-item nav-link px-3 py-1" onclick="window.scrollTo(0, 0);"> ⬆ </div>
+              <a class="nav-item nav-link px-4 py-1" href="/about.html">about</a>
+              <a class="nav-item nav-link px-4 py-1" href="/rss.xml"><img src="/images/rss.svg" class="rss" /></a>
             </div>
           </div>
         </nav>
