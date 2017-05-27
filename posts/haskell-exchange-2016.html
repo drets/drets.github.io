@@ -30,8 +30,7 @@
 
         <h1>Haskell eXchange 2016</h1>
 
-<p><span style="font-variant: small-caps;">3min 57sec read</span></p>
-<p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> by <a href="https://donsbot.wordpress.com/about">Don Stewart</a>, the author of the book <a href="http://book.realworldhaskell.org/">“Real World Haskell”</a>. Then I’ll share some thoughts about how companies might start to integrate functional programming into their tech stack.</p>
+<p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk by Don Stewart, the author of the book “Real World Haskell”. Then I’ll share some thoughts about how companies might start to integrate functional programming into their tech stack.</p>
 <div>
 
 </div>
@@ -108,17 +107,17 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 <p>• Types − in order to minimize complexity; it helps to deliver faster. Reuse is extremely cheap.</p>
 <p>Of course, for the reader unfamiliar with Haskell, these tips don’t tell much, but let me repeat once more. Basically, the main idea is that you need to use meaningful types as much as possible. In such a way you give a compiler more information about a program and consequently, the compiler helps to catch a lot of errors and hopefully optimize the code. Other simple ideas are to use total functions, move side-effects to the edges of a program. That’s it!</p>
 <h2 id="haskell-to-industry">Haskell to industry</h2>
-<p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to the Python or Javascript, or Php communities. It tends to lack some useful libraries, so if you switch to Haskell you should expect to have to contribute a lot to existing libraries or write more libraries for your needs. However, I believe it should be changed soon since a lot of people have realized that the OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell, if you were building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest a “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based, and so it looks like a good alternative to almighty Javascipt. One more advantage of Elm is that you can introduce it gradually into an existing JS project<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. Once you are happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start.</p>
+<p>Even if Haskell has a great community with a lot of academic folks behind it, the community is really small compare to the Python or Javascript, or Php communities. It tends to lack some useful libraries, so if you switch to Haskell you should expect to have to contribute a lot to existing libraries or write more libraries for your needs. However, I believe it should be changed soon since a lot of people have realized that the OOP paradigm is not an answer to robust software development, especially in the time when parallel and concurrent programming plays more important role. I understand that re-writing back-end systems on Haskell, if you were building the systems during last 10 years using Javasript, Php, Java may not be an option. As a first step towards Haskell I suggest a “Haskell-like” language − <a href="http://elm-lang.org">Elm</a>. Why Elm? Elm looks a bit simpler to start and it’s web-browser-based, and so it looks like a good alternative to almighty Javascipt. One more advantage of Elm is that you can introduce it gradually into an existing JS project<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Once you are happy with your front-end using Elm you may think to move some of your back-end services to Haskell. After Elm it should be much easier to start.</p>
 <p>Happy hacking!</p>
 <p>At the end of this post I’d like to share a photo with one of the core Haskell developers, <a href="https://en.wikipedia.org/wiki/Simon_Peyton_Jones">Simon Peyton Jones</a>.</p>
 <figure>
 <img src="../images/posts/haskell-exchange-2016/simon_and_me.png" />
 </figure>
+<p><span style="font-variant: small-caps;">3min 51sec read</span></p>
 <section class="footnotes">
 <hr />
 <ol>
-<li id="fn1"><p>To see full talk: <em><a href="https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems">“Haskell in the Large - The day to day practice of using Haskell to write large systems”</a></em>, you can sign up to “skills matter” site (it’s free!).<a href="#fnref1">↩</a></p></li>
-<li id="fn2"><p><a href="http://elm-lang.org/blog/how-to-use-elm-at-work">How to use Elm at work</a><a href="#fnref2">↩</a></p></li>
+<li id="fn1"><p><a href="http://elm-lang.org/blog/how-to-use-elm-at-work">How to use Elm at work</a><a href="#fnref1">↩</a></p></li>
 </ol>
 </section>
 
