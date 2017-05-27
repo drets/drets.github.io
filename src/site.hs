@@ -68,7 +68,7 @@ pandocCompilerOfOurs = do
     ourPandocWriterOptions
 
 ourTransform :: Pandoc -> Pandoc
-ourTransform p@(Pandoc meta blocks) = (Pandoc meta (ert:blocks))
+ourTransform p@(Pandoc meta blocks) = (Pandoc meta (blocks ++ [ert]))
   where
     ert = Para [ SmallCaps [ Str $ timeEstimateString p, Str $ " read"] ]
 
@@ -238,11 +238,10 @@ theSite = do
     match "index.html" $ do
         route $ idRoute
         compile $ do
-            posts <- recentFirst =<< loadAll allPosts
+            barePosts <- recentFirst =<< loadAll allPosts
             getResourceBody
                 >>= applyAsTemplate
-                     ((listField "posts" postItemCtx (return posts)) <>
-                     constField "amount" (show $ length posts - 1))
+                     (listField "post-teasers" teaserCtx (return barePosts))
                 >>= loadAndApplyTemplate
                     "templates/default.html" baseCtx
                 >>= relativizeUrls

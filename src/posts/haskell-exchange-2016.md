@@ -8,14 +8,10 @@ gh-issue: 1
 A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this
 post, I'd like to introduce readers to functional programming and briefly highlight the
 advantages and techniques of functional programming which I learned from a
-talk[^t] by [Don Stewart](https://donsbot.wordpress.com/about), the author of the book 
-[“Real World Haskell"](http://book.realworldhaskell.org/). Then I'll
+talk by Don Stewart, the author of the book 
+"Real World Haskell". Then I'll
 share some thoughts about how companies might start to integrate functional
 programming into their tech stack.
-
-[^t]: To see full talk:
-*[“Haskell in the Large - The day to day practice of using Haskell to write large systems”](https://skillsmatter.com/skillscasts/9098-haskell-in-the-large-the-day-to-day-practice-of-using-haskell-to-write-large-systems)*,
-you can sign up to “skills matter” site (it's free!).
 
 <div></div><!--more-->
 

@@ -3,14 +3,15 @@ title: posts
 ---
 <div class="posts">
   <div>
-    <ol start="$amount$" reversed>
-      $for(posts)$
-        <li>
-          <a href="$url$">$title$</a><br/>
-          <small>tags: $tags$</small><br/>
-          <small>date: $date$</small>
-        </li>
-      $endfor$
-    </ol>
+    $for(post-teasers)$
+    <a href="$url$" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">$title$</h5>
+        <small>$date$</small>
+      </div>
+      <p class="mb-1">$teaser$</p>
+      <small>$tags$</small>
+    </a>
+    $endfor$
   </div>
 </div>

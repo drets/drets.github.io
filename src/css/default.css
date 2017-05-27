@@ -121,10 +121,6 @@ a, a:hover {
     color: #3f51b5;
 }
 
-a:visited {
-    color: #9c27b0;
-}
-
 .note {
     background: #cce8ff;
     border: 1px solid #80c6ff;
@@ -161,7 +157,11 @@ a:visited {
     outline: none;
 }
 
-.posts, .tags {
+.tags {
     display: flex;
     justify-content: center;
+}
+
+.list-group-item p {
+    margin: 3px 0;
 }
