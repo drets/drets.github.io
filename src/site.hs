@@ -148,7 +148,7 @@ rssConfig = FeedConfiguration
 
 --------------------------------------------------------------------------------
 postDateCtx :: Context String
-postDateCtx = dateField "date" "%Y-%m-%d"
+postDateCtx = dateField "date" "%d-%m-%Y"
 
 postItemCtx :: Context String
 postItemCtx = postDateCtx <> baseCtx
