@@ -16,7 +16,7 @@ import qualified Github.Issues as G
 import           Hakyll
 import           System.FilePath (takeFileName, (-<.>), (</>))
 import           System.IO
-import           Text.Highlighting.Kate (styleToCss, tango)
+import           Text.Highlighting.Kate (styleToCss, monochrome)
 import           Text.Pandoc.Definition
 import           Text.Pandoc.Options
 import           Text.Pandoc.Options
@@ -278,7 +278,7 @@ theSite = do
 
     create ["css/syntax.css"] $ do
         route   $ idRoute
-        compile $ makeItem (compressCss . styleToCss $ tango)
+        compile $ makeItem (compressCss . styleToCss $ monochrome)
 
     create ["rss.xml"] $ do
         route idRoute
