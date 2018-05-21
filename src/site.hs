@@ -143,7 +143,7 @@ rssConfig = FeedConfiguration
     , feedDescription = "For λ calculus"
     , feedAuthorName = "Dmytro Rets"
     , feedAuthorEmail = "" -- Not used by RSS.
-    , feedRoot = "https://drets.life"
+    , feedRoot = "https://drets.github.io"
     }
 
 --------------------------------------------------------------------------------

@@ -3,7 +3,7 @@ title: about
 ---
 <img width="100" src="/images/hb_1972.40.7.jpg" />
 
-• Dmytro Rets, a Ukrainian citizen, working at Getsafe Insurance GmbH in Germany  
+• Dmytro Rets, a Ukrainian citizen, working ~~at Getsafe Insurance GmbH~~ in Germany  
 • a father of Alicia  
 • a fun of strongly typed functional programming languages.  
 • creator of [Heidelberg-Lambda](https://www.meetup.com/Heidelberg-Lambda) meetup  
