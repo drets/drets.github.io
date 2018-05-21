@@ -3,14 +3,124 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>drets</title>
-        <link>https://drets.life</link>
+        <link>https://drets.github.io</link>
         <description><![CDATA[For λ calculus]]></description>
-        <atom:link href="https://drets.life/rss.xml" rel="self"
+        <atom:link href="https://drets.github.io/rss.xml" rel="self"
                    type="application/rss+xml" />
-        <lastBuildDate>Tue, 23 May 2017 11:00:00 UT</lastBuildDate>
+        <lastBuildDate>Tue, 22 May 2018 11:00:00 UT</lastBuildDate>
         <item>
+    <title>My keyboard tweaks</title>
+    <link>https://drets.github.io/posts/keyboard-adjustments.html</link>
+    <description><![CDATA[<p>A few years ago I have started to feel pain in the wrists. So, I was looking for the ways of how to optimize the keyboard interaction. I will share the keyboard tweaks which helped <em>me</em> to avoid the pain in the wrists so far.</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="environment">Environment</h2>
+<p>The last few years I use MacBook Pro 2015 13-inch display. Laptop powered by Linux (<a href="https://en.wikipedia.org/wiki/NixOS">NixOS</a>).</p>
+<p><img width="500" src="../images/posts/keyboard-adjustments/mbp2015-keyboard.jpg" /></p>
+<h2 id="custom-keyboard-layout">Custom keyboard layout</h2>
+<p>I have the custom keyboard layout. I have <em>stolen</em> layout from <a href="https://github.com/neongreen">Artyom</a> and extended it afterwards. Custom keyboard layout uses the <a href="https://en.wikipedia.org/wiki/X_keyboard_extension">X keyboard extension</a>. Layout schemes can be found in <a href="https://github.com/drets/dots/tree/2854ef40f729afd7a41b17095234070f76e0ff8f/.config/xkb/symbols">~/.config/xkb/symbols</a> folder. I apply the layout on the system startup using:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">setxkbmap</span> -layout <span class="st">&quot;us(my),ru(my)&quot;</span> -option <span class="st">&quot;&quot;</span> -option <span class="st">&quot;grp:lctrl_toggle&quot;</span> -print <span class="kw">|</span> <span class="ex">xkbcomp</span> -I<span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/.config/xkb&quot;</span> - <span class="va">$DISPLAY</span></code></pre></div>
+<p>Layout highlights:</p>
+<p>• <code>d</code> is the third shift level.<br />
+Say, layout scheme has <code>key &lt;AD04&gt; {[ r, R, enfilledcircbullet ]};</code> line. So, by holding <code>d</code> and pressing <code>r</code> (<code>d + r</code>) we get <code>•</code> (enfilledcircbullet) character.</p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/enfilledcircbullet.png" /></p>
+<p>• <code>Backspace</code> is in place of <code>j</code></p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/backspace.png" /></p>
+<p>(<code>j</code> moved to the third level: <code>d + p</code>).</p>
+<p>• Arrow keys added to the third level (left: <code>d + j</code>, up: <code>d + i</code>, right: <code>d + l</code>, down: <code>d + k</code>).</p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/arrows.png" /></p>
+<p>• <code>Ctrl</code> is in place of <code>s</code></p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/ctrl.png" /></p>
+<p>(<code>s</code> moved to the <code>u</code>, <code>u</code> moved to the <code>{</code>, <code>{</code> moved to the third level: <code>d + t</code>).</p>
+<p>• <code>Enter</code> added to the third level: <code>d + space</code>.</p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/enter.png" /></p>
+<p>• Mouse left click added to the third level: <code>d + f.</code></p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/left-click.png" /></p>
+<p>I press the keys by left hand and navigate the cursor using touchpad by right hand.</p>
+<h2 id="sticky-keys">Sticky keys</h2>
+<p>I made <em>all</em> the modifier keys (including the third level key) to be sticky by using the <a href="http://faculty.missouri.edu/~stephen/software/#xkbset">xkbset</a> program. It runs on the system startup:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">xkbset</span> sticky -twokey -latchlock
+<span class="ex">xkbset</span> mousekeys
+<span class="ex">xkbset</span> exp 1 =sticky =mousekeys =sticky =twokey =latchlock</code></pre></div>
+<p>Say, I want to type <code>R</code>. I can do it in a regular way by holding <code>Shift</code> and pressing <code>r</code>, or I can press <code>Shift</code>, <em>release</em> <code>Shift</code> and then press <code>r</code>.</p>
+<h2 id="emacs">Emacs</h2>
+<p>I recommend to use <a href="https://github.com/emacs-evil/evil">evil</a> mode, unless you have the custom keyboard layout. My current emacs configuration can be found in <a href="https://github.com/drets/dots/tree/master/.emacs.d">~/.emacs.d</a> folder. I won’t go into details, just one thing − I bound <code>avy-goto-word-or-subword-1</code> to <code>Tab</code> :)</p>
+<h2 id="awesome-wm">awesome wm</h2>
+<p>I use <a href="https://awesomewm.org/">awesome window manager</a> having nine workspaces.<br />
+To switch the workspace:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Workspace</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>one</td>
+<td>Command + u</td>
+</tr>
+<tr class="even">
+<td>two</td>
+<td>Command + i</td>
+</tr>
+<tr class="odd">
+<td>three</td>
+<td>Command + o</td>
+</tr>
+<tr class="even">
+<td>four</td>
+<td>Command + j</td>
+</tr>
+<tr class="odd">
+<td>five</td>
+<td>Command + k</td>
+</tr>
+<tr class="even">
+<td>six</td>
+<td>Command + l</td>
+</tr>
+<tr class="odd">
+<td>seven</td>
+<td>Command + m</td>
+</tr>
+<tr class="even">
+<td>eight</td>
+<td>Command + &lt;</td>
+</tr>
+<tr class="odd">
+<td>nine</td>
+<td>Command + &gt;</td>
+</tr>
+</tbody>
+</table>
+<p><img width="250" src="../images/posts/keyboard-adjustments/workspaces.png" /></p>
+<h2 id="alternative-way">Alternative way</h2>
+<p>And yet the best way to prevent the wrists pain is:</p>
+<p><img width="500" src="../images/posts/keyboard-adjustments/alternative-way.jpg" /></p>
+<p><span style="font-variant: small-caps;">1min 58sec read</span></p>
+
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/4.0">Comment on GitHub</a>
+
+    
+  </div>
+  <div>
+    
+    
+  </div>
+</div>
+]]></description>
+    <pubDate>Tue, 22 May 2018 11:00:00 UT</pubDate>
+    <guid>https://drets.github.io/posts/keyboard-adjustments.html</guid>
+    <dc:creator>Dmytro Rets</dc:creator>
+</item>
+<item>
     <title>Conditionals</title>
-    <link>https://drets.life/posts/conditionals.html</link>
+    <link>https://drets.github.io/posts/conditionals.html</link>
     <description><![CDATA[<p>I decided to write about conditional sentences. It should help <em>me</em> to memorize how to properly build the conditional sentences. Conditional sentence is built from “if” (condition) and “main” (result) clauses. There are <strong>three</strong> main types of conditional sentences.</p>
 <div>
 
@@ -82,12 +192,12 @@ She would have passed her exam if she hadn’t been so stupid.</p>
 </div>
 ]]></description>
     <pubDate>Tue, 23 May 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/conditionals.html</guid>
+    <guid>https://drets.github.io/posts/conditionals.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 19</title>
-    <link>https://drets.life/posts/weekly-review-2017-19.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-19.html</link>
     <description><![CDATA[<p>Trip to Warsaw. Started to work on chapter four.</p>
 <div>
 
@@ -119,12 +229,12 @@ She would have passed her exam if she hadn’t been so stupid.</p>
 </div>
 ]]></description>
     <pubDate>Mon, 15 May 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-19.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-19.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 18</title>
-    <link>https://drets.life/posts/weekly-review-2017-18.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-18.html</link>
     <description><![CDATA[<p>Chapter three is HUGE, goal analysis and more.</p>
 <div>
 
@@ -189,12 +299,12 @@ I want to work on it in the near future.</p>
 </div>
 ]]></description>
     <pubDate>Tue, 09 May 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-18.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-18.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 17</title>
-    <link>https://drets.life/posts/weekly-review-2017-17.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-17.html</link>
     <description><![CDATA[<p>My fifth weekly review is here. I am continuing to work on the third chapter of “How to prove it” book. I started to do a long distance walk.</p>
 <div>
 
@@ -241,12 +351,12 @@ Next book for my walking activity is written by the same author: “<a href="htt
 </div>
 ]]></description>
     <pubDate>Mon, 01 May 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-17.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-17.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 16</title>
-    <link>https://drets.life/posts/weekly-review-2017-16.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-16.html</link>
     <description><![CDATA[<p>This is my 4th weekly review of the 16th week 2017 year. Life is good!</p>
 <div>
 
@@ -294,12 +404,12 @@ These albums play in my player:</p>
 </div>
 ]]></description>
     <pubDate>Mon, 24 Apr 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-16.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-16.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 15</title>
-    <link>https://drets.life/posts/weekly-review-2017-15.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-15.html</link>
     <description><![CDATA[<p>It’s my weekly review for the 15th week of the 2017 year. Since I work through the “How to Prove It: A Structured Approach” book. This week is all about it.</p>
 <div>
 
@@ -328,12 +438,12 @@ These albums play in my player:</p>
 </div>
 ]]></description>
     <pubDate>Mon, 17 Apr 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-15.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-15.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 14</title>
-    <link>https://drets.life/posts/weekly-review-2017-14.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-14.html</link>
     <description><![CDATA[<blockquote>
 <p>The only way to learn mathematics is to do mathematics.</p>
 <p>— <cite>Paul Halmos</cite></p>
@@ -364,12 +474,12 @@ These albums play in my player:</p>
 </div>
 ]]></description>
     <pubDate>Mon, 10 Apr 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-14.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-14.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Weekly Review 13</title>
-    <link>https://drets.life/posts/weekly-review-2017-13.html</link>
+    <link>https://drets.github.io/posts/weekly-review-2017-13.html</link>
     <description><![CDATA[<p>I am starting doing my weekly reviews. I am going to share the things which kept my attention, my opinion on these things and what I am going to do next. <del>Since these reviews are mostly for me I disabled “Comment on GitHub” button</del> <em>(friend of mine suggested to enable the comments)</em>. If you have questions or suggestions feel free to send me an email. <del>You may find my email on GitHub and link to my GitHub account is on “About” page</del> <em>(I added the email address to “About” page)</em>. Let’s start.</p>
 <div>
 
@@ -415,12 +525,12 @@ I found a nice <a href="http://faculty.missouri.edu/~stephen/software/#xkbset">x
 </div>
 ]]></description>
     <pubDate>Mon, 03 Apr 2017 11:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/weekly-review-2017-13.html</guid>
+    <guid>https://drets.github.io/posts/weekly-review-2017-13.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 <item>
     <title>Haskell eXchange 2016</title>
-    <link>https://drets.life/posts/haskell-exchange-2016.html</link>
+    <link>https://drets.github.io/posts/haskell-exchange-2016.html</link>
     <description><![CDATA[<p>A few weeks ago I was able to attend the “Haskell eXchange” conference in London. In this post, I’d like to introduce readers to functional programming and briefly highlight the advantages and techniques of functional programming which I learned from a talk by Don Stewart, the author of the book “Real World Haskell”. Then I’ll share some thoughts about how companies might start to integrate functional programming into their tech stack.</p>
 <div>
 
@@ -525,7 +635,7 @@ write <code>authenticate :: Privileges p =&gt; User -&gt; Password -&gt; IO (Aut
 </div>
 ]]></description>
     <pubDate>Sat, 22 Oct 2016 03:00:00 UT</pubDate>
-    <guid>https://drets.life/posts/haskell-exchange-2016.html</guid>
+    <guid>https://drets.github.io/posts/haskell-exchange-2016.html</guid>
     <dc:creator>Dmytro Rets</dc:creator>
 </item>
 

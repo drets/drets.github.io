@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>My keyboard tweaks - for λ Calculus</title>
+        <link rel="canonical" href="http://www.drets.life/posts/keyboard-adjustments.html" />
+        <link rel="alternate" href="../rss.xml" title="For λ calculus by drets" type="application/rss+xml" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../css/syntax.css" />
+        <link rel="stylesheet" type="text/css" href="../css/default.css" />
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-toggleable-md navbar-inverse" style="background-color: #00897b;">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-nav w-50 justify-content-around">
+            <a class="navbar-brand" href="../">“For λ calculus” by <i>drets</i></a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav w-100 justify-content-around align-items-end">
+              <a class="nav-item nav-link px-3 py-1" href="../about.html">about</a>
+              <a class="nav-item nav-link px-3 py-1" href="../tags.html">tags</a>
+              <a class="nav-item nav-link px-3 py-1" href="../rss.xml"><img src="../images/rss.svg" class="rss" /></a>
+            </div>
+          </div>
+        </nav>
+        <div class="content">
+
+        <h1>My keyboard tweaks</h1>
+
+<p>A few years ago I have started to feel pain in the wrists. So, I was looking for the ways of how to optimize the keyboard interaction. I will share the keyboard tweaks which helped <em>me</em> to avoid the pain in the wrists so far.</p>
+<div>
+
+</div>
+<!--more-->
+<h2 id="environment">Environment</h2>
+<p>The last few years I use MacBook Pro 2015 13-inch display. Laptop powered by Linux (<a href="https://en.wikipedia.org/wiki/NixOS">NixOS</a>).</p>
+<p><img width="500" src="../images/posts/keyboard-adjustments/mbp2015-keyboard.jpg" /></p>
+<h2 id="custom-keyboard-layout">Custom keyboard layout</h2>
+<p>I have the custom keyboard layout. I have <em>stolen</em> layout from <a href="https://github.com/neongreen">Artyom</a> and extended it afterwards. Custom keyboard layout uses the <a href="https://en.wikipedia.org/wiki/X_keyboard_extension">X keyboard extension</a>. Layout schemes can be found in <a href="https://github.com/drets/dots/tree/2854ef40f729afd7a41b17095234070f76e0ff8f/.config/xkb/symbols">~/.config/xkb/symbols</a> folder. I apply the layout on the system startup using:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">setxkbmap</span> -layout <span class="st">&quot;us(my),ru(my)&quot;</span> -option <span class="st">&quot;&quot;</span> -option <span class="st">&quot;grp:lctrl_toggle&quot;</span> -print <span class="kw">|</span> <span class="ex">xkbcomp</span> -I<span class="st">&quot;</span><span class="va">$HOME</span><span class="st">/.config/xkb&quot;</span> - <span class="va">$DISPLAY</span></code></pre></div>
+<p>Layout highlights:</p>
+<p>• <code>d</code> is the third shift level.<br />
+Say, layout scheme has <code>key &lt;AD04&gt; {[ r, R, enfilledcircbullet ]};</code> line. So, by holding <code>d</code> and pressing <code>r</code> (<code>d + r</code>) we get <code>•</code> (enfilledcircbullet) character.</p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/enfilledcircbullet.png" /></p>
+<p>• <code>Backspace</code> is in place of <code>j</code></p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/backspace.png" /></p>
+<p>(<code>j</code> moved to the third level: <code>d + p</code>).</p>
+<p>• Arrow keys added to the third level (left: <code>d + j</code>, up: <code>d + i</code>, right: <code>d + l</code>, down: <code>d + k</code>).</p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/arrows.png" /></p>
+<p>• <code>Ctrl</code> is in place of <code>s</code></p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/ctrl.png" /></p>
+<p>(<code>s</code> moved to the <code>u</code>, <code>u</code> moved to the <code>{</code>, <code>{</code> moved to the third level: <code>d + t</code>).</p>
+<p>• <code>Enter</code> added to the third level: <code>d + space</code>.</p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/enter.png" /></p>
+<p>• Mouse left click added to the third level: <code>d + f.</code></p>
+<p><img width="250" src="../images/posts/keyboard-adjustments/left-click.png" /></p>
+<p>I press the keys by left hand and navigate the cursor using touchpad by right hand.</p>
+<h2 id="sticky-keys">Sticky keys</h2>
+<p>I made <em>all</em> the modifier keys (including the third level key) to be sticky by using the <a href="http://faculty.missouri.edu/~stephen/software/#xkbset">xkbset</a> program. It runs on the system startup:</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="ex">xkbset</span> sticky -twokey -latchlock
+<span class="ex">xkbset</span> mousekeys
+<span class="ex">xkbset</span> exp 1 =sticky =mousekeys =sticky =twokey =latchlock</code></pre></div>
+<p>Say, I want to type <code>R</code>. I can do it in a regular way by holding <code>Shift</code> and pressing <code>r</code>, or I can press <code>Shift</code>, <em>release</em> <code>Shift</code> and then press <code>r</code>.</p>
+<h2 id="emacs">Emacs</h2>
+<p>I recommend to use <a href="https://github.com/emacs-evil/evil">evil</a> mode, unless you have the custom keyboard layout. My current emacs configuration can be found in <a href="https://github.com/drets/dots/tree/master/.emacs.d">~/.emacs.d</a> folder. I won’t go into details, just one thing − I bound <code>avy-goto-word-or-subword-1</code> to <code>Tab</code> :)</p>
+<h2 id="awesome-wm">awesome wm</h2>
+<p>I use <a href="https://awesomewm.org/">awesome window manager</a> having nine workspaces.<br />
+To switch the workspace:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Workspace</th>
+<th>Key</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>one</td>
+<td>Command + u</td>
+</tr>
+<tr class="even">
+<td>two</td>
+<td>Command + i</td>
+</tr>
+<tr class="odd">
+<td>three</td>
+<td>Command + o</td>
+</tr>
+<tr class="even">
+<td>four</td>
+<td>Command + j</td>
+</tr>
+<tr class="odd">
+<td>five</td>
+<td>Command + k</td>
+</tr>
+<tr class="even">
+<td>six</td>
+<td>Command + l</td>
+</tr>
+<tr class="odd">
+<td>seven</td>
+<td>Command + m</td>
+</tr>
+<tr class="even">
+<td>eight</td>
+<td>Command + &lt;</td>
+</tr>
+<tr class="odd">
+<td>nine</td>
+<td>Command + &gt;</td>
+</tr>
+</tbody>
+</table>
+<p><img width="250" src="../images/posts/keyboard-adjustments/workspaces.png" /></p>
+<h2 id="alternative-way">Alternative way</h2>
+<p>And yet the best way to prevent the wrists pain is:</p>
+<p><img width="500" src="../images/posts/keyboard-adjustments/alternative-way.jpg" /></p>
+<p><span style="font-variant: small-caps;">1min 58sec read</span></p>
+
+<div id="comment-nav">
+  <div>
+    <a id="gh-comments-button" class="btn" href="https://github.com/drets/drets.github.io/issues/4.0">Comment on GitHub</a>
+
+    
+  </div>
+  <div>
+    
+      
+    
+  </div>
+</div>
+
+
+
+      </div>
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    </body>
+</html>
